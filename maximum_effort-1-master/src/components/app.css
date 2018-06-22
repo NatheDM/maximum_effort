@@ -1,0 +1,49 @@
+* {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  font-size: 1.01em;
+  color: black;
+}
+
+.page {
+  margin: auto;
+  width: 90%;
+}
+
+/* .content {
+  margin-top: -21px;
+  box-shadow: 0px 0px 8px 1px rgb(192, 28, 28);
+ } */
+
+.navbar {
+  box-shadow: 0px 0px 8px 1px black;
+  border-radius: 4px 4px 0px 0px !important;
+}
+
+.panel svg {
+  vertical-align: middle;
+  margin: 4px;
+}
+body {
+  background-image: url("../images/Img1.jpg");
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.jumbotron {
+  background: linear-gradient(
+    to bottom,
+    rgba(238, 238, 238, 0.65),
+    rgba(238, 238, 238, 0)
+  ) !important;
+  /* width: 35%; */
+  /*  box-shadow: 0px 2px 4px 0px black; */
+  border-radius: 30px 30px 30px 30px !important;
+  height: 625px;
+}
+.well {
+  background-color: rgba(238, 238, 238, 0.6) !important;
+  /* width: 35%; */
+  box-shadow: 0px 2px 4px 0px black;
+  border-radius: 30px 30px 30px 30px !important;
+}
