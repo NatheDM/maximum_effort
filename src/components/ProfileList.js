@@ -35,7 +35,7 @@ const mapDispatchToProps = dispatch => ({
   } */
 });
 
-const Profiles = (history, profiles, getProfiles) => {
+const Profiles = ({ history, profiles, getProfiles }) => {
   // props.getProfiles();
 
   let goHome = event => {

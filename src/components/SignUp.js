@@ -67,11 +67,10 @@ const SignUp = ({ addProfile, history, interests }) => {
           </FormGroup>
 
           <FormGroup>
-            <Col sm={2} componentClass={ControlLabel}>
-              First name:
-            </Col>
+            <Col sm={2} componentClass={ControlLabel} />
             <Col sm={6}>
               <FormControl
+                placeholder="First name"
                 type="text"
                 required
                 inputRef={ref => {
@@ -82,11 +81,10 @@ const SignUp = ({ addProfile, history, interests }) => {
           </FormGroup>
 
           <FormGroup>
-            <Col sm={2} componentClass={ControlLabel}>
-              Last name:
-            </Col>
+            <Col sm={2} componentClass={ControlLabel} />
             <Col sm={6}>
               <FormControl
+                placeholder="Last name"
                 type="text"
                 required
                 inputRef={ref => {
@@ -97,11 +95,10 @@ const SignUp = ({ addProfile, history, interests }) => {
           </FormGroup>
 
           <FormGroup>
-            <Col sm={2} componentClass={ControlLabel}>
-              Birth date:
-            </Col>
+            <Col sm={2} componentClass={ControlLabel} />
             <Col sm={6}>
               <FormControl
+                placeholder="Birth datte"
                 type="text"
                 required
                 inputRef={ref => {
@@ -112,11 +109,10 @@ const SignUp = ({ addProfile, history, interests }) => {
           </FormGroup>
 
           <FormGroup>
-            <Col sm={2} componentClass={ControlLabel}>
-              Home city:
-            </Col>
+            <Col sm={2} componentClass={ControlLabel} />
             <Col sm={6}>
               <FormControl
+                placeholder="Home city"
                 type="text"
                 required
                 inputRef={ref => {
@@ -127,11 +123,10 @@ const SignUp = ({ addProfile, history, interests }) => {
           </FormGroup>
 
           <FormGroup>
-            <Col sm={2} componentClass={ControlLabel}>
-              Home state:
-            </Col>
+            <Col sm={2} componentClass={ControlLabel} />
             <Col sm={6}>
               <FormControl
+                placeholder="Home state"
                 type="text"
                 required
                 inputRef={ref => {
@@ -142,11 +137,10 @@ const SignUp = ({ addProfile, history, interests }) => {
           </FormGroup>
 
           <FormGroup>
-            <Col sm={2} componentClass={ControlLabel}>
-              Home zip code:
-            </Col>
+            <Col sm={2} componentClass={ControlLabel} />
             <Col sm={6}>
               <FormControl
+                placeholder="Home zip code"
                 type="text"
                 required
                 inputRef={ref => {
@@ -157,11 +151,10 @@ const SignUp = ({ addProfile, history, interests }) => {
           </FormGroup>
 
           <FormGroup>
-            <Col sm={2} componentClass={ControlLabel}>
-              User name:
-            </Col>
+            <Col sm={2} componentClass={ControlLabel} />
             <Col sm={6}>
               <FormControl
+                placeholder="User name"
                 type="text"
                 required
                 inputRef={ref => {
@@ -172,11 +165,10 @@ const SignUp = ({ addProfile, history, interests }) => {
           </FormGroup>
 
           <FormGroup>
-            <Col sm={2} componentClass={ControlLabel}>
-              E-mail:
-            </Col>
+            <Col sm={2} componentClass={ControlLabel} />
             <Col sm={6}>
               <FormControl
+                placeholder="E-mail"
                 type="text"
                 required
                 inputRef={ref => {
@@ -187,11 +179,10 @@ const SignUp = ({ addProfile, history, interests }) => {
           </FormGroup>
 
           <FormGroup>
-            <Col sm={2} componentClass={ControlLabel}>
-              Password:
-            </Col>
+            <Col sm={2} componentClass={ControlLabel} />
             <Col sm={6}>
               <FormControl
+                placeholder="Password"
                 type="text"
                 required
                 inputRef={ref => {
@@ -202,11 +193,10 @@ const SignUp = ({ addProfile, history, interests }) => {
           </FormGroup>
 
           <FormGroup>
-            <Col sm={2} componentClass={ControlLabel}>
-              Main interest:
-            </Col>
+            <Col sm={2} componentClass={ControlLabel} />
             <Col sm={6}>
               <FormControl
+                placeholder="Main interest"
                 componentClass="select"
                 defaultValue={-1}
                 inputRef={ref => {
