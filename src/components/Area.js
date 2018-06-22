@@ -2,15 +2,15 @@ import React from "react";
 import {
   Jumbotron,
   Grid,
-  Form,
-  FormGroup,
+  // Form,
+  // FormGroup,
   Col,
-  FormControl,
-  ControlLabel,
-  Radio,
+  // FormControl,
+  // ControlLabel,
+  // Radio,
   Button
 } from "react-bootstrap";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import MapWithASearchBox from "./Maps.js";
 

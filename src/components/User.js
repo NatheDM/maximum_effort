@@ -5,12 +5,12 @@ import {
   Form,
   FormGroup,
   Col,
-  FormControl,
-  ControlLabel,
-  Radio,
+  // FormControl,
+  // ControlLabel,
+  // Radio,
   Button
 } from "react-bootstrap";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 const User = props => {

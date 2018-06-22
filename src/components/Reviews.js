@@ -5,12 +5,12 @@ import {
   Form,
   FormGroup,
   Col,
-  FormControl,
-  ControlLabel,
-  Radio,
+  // FormControl,
+  // ControlLabel,
+  // Radio,
   Button
 } from "react-bootstrap";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { Route, Link } from "react-router-dom";
 const Reviews = props => {
@@ -31,16 +31,15 @@ const Reviews = props => {
             <Button type="submit">Go to map</Button>
           </Col>
         </Form>
+        <ul>
+          <ListItemLink to="/somewhere" />
+          <ListItemLink to="/somewhere-else" />
+        </ul>;
       </Grid>
     </Jumbotron>
   );
 };
-{
-  /* <ul>
-  <ListItemLink to="/somewhere" />
-  <ListItemLink to="/somewhere-else" />
-</ul>; */
-}
+
 const ListItemLink = ({ to, ...rest }) => (
   <Route
     path={to}

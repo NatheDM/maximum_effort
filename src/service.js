@@ -9,18 +9,12 @@ const requests = {
   get: url => axios.get(`${API_ROOT}${url}`).then(responseData),
   post: (url, payload) =>
     axios.post(`${API_ROOT}${url}`, payload).then(responseData),
-  delete: url => {
-    console.log(`${API_ROOT}${url}`);
-    axios.delete(`${API_ROOT}${url}`).then(responseData);
-  }
+  delete: url => axios.delete(`${API_ROOT}${url}`).then(responseData)
 };
 
 const profiles = {
   all: page => requests.get(`/profiles`),
-  add: payload => {
-    console.log(payload);
-    requests.post(`/profiles`, payload);
-  },
+  add: payload => requests.post(`/profiles`, payload),
   delete: id => requests.delete(`/profiles/${id}`)
 };
 

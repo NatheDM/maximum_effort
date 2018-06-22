@@ -167,6 +167,6 @@ const MapWithASearchBox = compose(
   </GoogleMap>
 ));
 
-<MapWithASearchBox />;
+// <MapWithASearchBox />;
 
 export default MapWithASearchBox;

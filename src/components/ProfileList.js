@@ -5,9 +5,9 @@ import {
   Form,
   FormGroup,
   Col,
-  FormControl,
-  ControlLabel,
-  Radio,
+  // FormControl,
+  // ControlLabel,
+  // Radio,
   Button,
   Panel
 } from "react-bootstrap";
@@ -20,70 +20,71 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  removeProfile: _id => dispatch({ type: "REMOVE_PROFILE", payload: _id }),
-  getProfiles: payload => {
-    services.profiles
-      .all()
-      .then(prfl => dispatch({ type: "LOAD_PROFILE", payload: prfl }));
-  }
+  removeProfile: _id =>
+    dispatch({
+      type: "REMOVE_PROFILE",
+      payload: _id
+    })
+  /*   getProfiles: payload => {
+    services.profiles.all().then(prfl =>
+      dispatch({
+        type: "LOAD_PROFILE",
+        payload: prfl
+      })
+    );
+  } */
 });
 
-const Profiles = props => {
-  props.getProfiles();
+const Profiles = (history, profiles, getProfiles) => {
+  // props.getProfiles();
+
   let goHome = event => {
     event.preventDefault();
-    props.history.push("/user");
+    history.push("/user");
   };
 
   let findProfile = event => {
     event.preventDefault();
-    props.history.push("/profiletemp");
+    history.push("/profiletemp");
   };
 
   return (
     <Jumbotron>
       <Grid>
-        <Form horizontal>
-          <FormGroup>
-            {!props.profiles.length && <h3>no profiles found</h3>}
-            {props.profiles.map(prfl => {
-              <Col sm={4} key={prfl._id}>
-                <Panel>
-                  <Panel.Heading>
-                    {prfl.first} {prfl.last}
-                  </Panel.Heading>
-                  <Panel.Body>
-                    ID: {prfl._id}
-                    <br />
-                    City: {prfl.city}
-                    <br />
-                    State: {prfl.state}
-                  </Panel.Body>
-                </Panel>
-              </Col>;
-            })}
-          </FormGroup>
-
-          <Col smOffset={2} sm={6}>
-            <Button type="submit" onClick={event => goHome(event)}>
-              User Home
-            </Button>
+        {!profiles.length && <h3>no profiles found</h3>}
+        {console.log(profiles.length)}
+        {profiles.map(prfl => (
+          <Col sm={4} key={prfl._id}>
+            <Panel>
+              <Panel.Heading>
+                <Panel.Title>{prfl.nameUser}</Panel.Title>
+              </Panel.Heading>
+              <Panel.Body>
+                ID: {prfl._id}
+                <br />
+                City: {prfl.homeCity}
+                <br />
+                State: {prfl.homeState}
+              </Panel.Body>
+            </Panel>
           </Col>
-
-          <Col smOffset={2} sm={6}>
-            <Button type="submit" onClick={event => findProfile(event)}>
-              A profile.
-            </Button>
-          </Col>
-        </Form>
+        ))}
+        <Col smOffset={2} sm={6}>
+          <Button type="submit" onClick={event => goHome(event)}>
+            User Home
+          </Button>
+        </Col>
+        <Col smOffset={2} sm={6}>
+          <Button type="submit" onClick={event => findProfile(event)}>
+            A profile.
+          </Button>
+        </Col>
       </Grid>
     </Jumbotron>
   );
 };
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Profiles)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Profiles);

@@ -1,7 +1,7 @@
 import React from "react";
 import { Jumbotron, Grid, Col, Panel, Form, Button } from "react-bootstrap";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+// import { withRouter } from "react-router-dom";
 import ProfileList from "./ProfileList";
 
 const mapStateToProps = state => ({
