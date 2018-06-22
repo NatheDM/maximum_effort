@@ -74,7 +74,16 @@ const MapWithASearchBox = compose(
     googleMapURL:
       "https://maps.googleapis.com/maps/api/js?key=AIzaSyBSVdV2a02zGL_5KwNWA6_xy9ZWuUB5-BU&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `400px` }} />,
+    containerElement: (
+      <div
+        style={{
+          height: `400px`,
+          position: "relative",
+          right: "-450px",
+          bottom: "-30px"
+        }}
+      />
+    ),
     mapElement: <div style={{ height: `100%` }} />
   }),
   lifecycle({
@@ -84,8 +93,8 @@ const MapWithASearchBox = compose(
       this.setState({
         bounds: null,
         center: {
-          lat: 41.9,
-          lng: -87.624
+          lat: 33.448377,
+          lng: -112.074037
         },
         markers: [],
         onMapMounted: ref => {
@@ -135,7 +144,7 @@ const MapWithASearchBox = compose(
     ref={props.onMapMounted}
     defaultZoom={15}
     center={props.center}
-    onBoundsChanged={props.onBoundsChanged}
+    // onBoundsChanged={props.onBoundsChanged}
   >
     <SearchBox
       ref={props.onSearchBoxMounted}
@@ -145,7 +154,7 @@ const MapWithASearchBox = compose(
     >
       <input
         type="text"
-        placeholder="Customized your placeholder"
+        placeholder="Search"
         style={{
           boxSizing: `border-box`,
           border: `1px solid transparent`,

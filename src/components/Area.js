@@ -30,23 +30,21 @@ const Area = props => {
       <Grid>
         <Col smOffset={2} sm={6}>
           <h3>Area map.</h3>
-          <div
-            style={{
-              float: "right"
-            }}
-          >
-            <MapWithASearchBox />
-            _______________________________________________________________________________________________________________________
-          </div>
+          {/* Removing the "div" and style within the Div, fixed
+              the issue with the underscore expanding the page and
+              allowed map to display as normal.  --James */}
+          <MapWithASearchBox />
         </Col>
 
-        <Col smOffset={2} sm={6}>
+        {/* Changed the smOffset from "2" sm="6", to "2" sm="-10" for both
+            buttons to align to the top of the page.  --James  */}
+        <Col smOffset={2} sm={-10}>
           <Button type="submit" onClick={event => goHome(event)}>
             User Home
           </Button>
         </Col>
 
-        <Col smOffset={2} sm={6}>
+        <Col smOffset={2} sm={-10}>
           <Button type="submit" onClick={event => findReviews(event)}>
             Local Reviews
           </Button>
