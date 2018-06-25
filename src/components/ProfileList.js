@@ -24,7 +24,14 @@ const mapDispatchToProps = dispatch => ({
     dispatch({
       type: "REMOVE_PROFILE",
       payload: _id
+    }),
+
+  getOneProfile: payload =>
+    dispatch({
+      type: "LOAD_ONE_PROFILE",
+      payload
     })
+
   /*   getProfiles: payload => {
     services.profiles.all().then(prfl =>
       dispatch({
@@ -35,7 +42,7 @@ const mapDispatchToProps = dispatch => ({
   } */
 });
 
-const Profiles = ({ history, profiles, getProfiles }) => {
+const Profiles = ({ history, profiles, getProfiles, getOneProfile }) => {
   // props.getProfiles();
 
   let goHome = event => {
@@ -48,16 +55,26 @@ const Profiles = ({ history, profiles, getProfiles }) => {
     history.push("/profiletemp");
   };
 
+  let goGoGadgetProfile = id => {
+    services.profiles.one(id).then(prfl => getOneProfile(prfl));
+    history.push("/profiles/" + id);
+  };
+
   return (
     <Jumbotron>
       <Grid>
         {!profiles.length && <h3>no profiles found</h3>}
-        {console.log(profiles.length)}
         {profiles.map(prfl => (
           <Col sm={4} key={prfl._id}>
             <Panel>
               <Panel.Heading>
-                <Panel.Title>{prfl.nameUser}</Panel.Title>
+                <Button
+                  onClick={() => {
+                    goGoGadgetProfile(prfl._id);
+                  }}
+                >
+                  <Panel.Title>{prfl.nameUser}</Panel.Title>
+                </Button>
               </Panel.Heading>
               <Panel.Body>
                 ID: {prfl._id}

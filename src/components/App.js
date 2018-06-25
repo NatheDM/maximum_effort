@@ -38,11 +38,10 @@ const App = ({ onLoad }) => {
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={LogIn} />
         <Route path="/user" component={User} />
-        <Route path="/profiles" component={Profiles} />
+        <Route exact path="/profiles" component={Profiles} />
+        <Route path="/profiles/:id" component={Profile} />
         <Route path="/area" component={Area} />
         <Route path="/reviews" component={Reviews} />
-        <Route path="/profiletemp" component={Profile} />
-        {/* <Route path="/profileall" component={ProfileAll} /> */}
       </div>
     </div>
   );

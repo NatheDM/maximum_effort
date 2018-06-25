@@ -15,7 +15,8 @@ const requests = {
 const profiles = {
   all: page => requests.get(`/profiles`),
   add: payload => requests.post(`/profiles`, payload),
-  delete: id => requests.delete(`/profiles/${id}`)
+  delete: id => requests.delete(`/profiles/${id}`),
+  one: id => requests.get(`/profiles/${id}`)
 };
 
 export default { profiles };

@@ -1,35 +1,41 @@
 import React from "react";
 import { Jumbotron, Grid, Col, Panel, Form, Button } from "react-bootstrap";
 import { connect } from "react-redux";
-// import { withRouter } from "react-router-dom";
-import ProfileList from "./ProfileList";
+import { withRouter } from "react-router-dom";
+// import ProfileList from "./ProfileList";
+import services from "../service";
 
 const mapStateToProps = state => ({
-  profiles: state.profiles
+  profiles: state.profiles,
+  getOneProfile: state.getOneProfile
 });
 
-const Profile = props => {
+const Profile = ({ history, profiles, getOneProfile }) => {
   let findProfiles = event => {
     event.preventDefault();
-    props.history.push("/profiles");
+    history.push("/profiles");
   };
+
+  console.log(getOneProfile);
 
   return (
     <Jumbotron>
       <Grid>
         <Form horizontal>
-          <Panel>
-            <Panel.Heading>
-              <Panel.Title />
-            </Panel.Heading>
-            <Panel.Body>
-              UserName:
-              <br />
-              Email:
-              <br />
-              Interests:
-            </Panel.Body>
-          </Panel>
+          {profiles.map(prfl => (
+            <Panel>
+              <Panel.Heading>
+                <Panel.Title />
+              </Panel.Heading>
+              <Panel.Body>
+                UserName: {prfl.nameUser}
+                <br />
+                Email: {prfl.email}
+                <br />
+                Interests: {prfl.interest}
+              </Panel.Body>
+            </Panel>
+          ))}
           <Col smOffset={2} sm={6}>
             <Button type="submit" onClick={event => findProfiles(event)}>
               Find profiles
