@@ -12,25 +12,16 @@ import {
   Panel
 } from "react-bootstrap";
 import { connect } from "react-redux";
-//import { withRouter } from "react-router-dom";
-//import services from "../service";
 
 const mapStateToProps = state => ({
   profiles: state.profiles
 });
 
-const Profiles = ({ history, profiles, getProfiles, getOneProfile }) => {
-  // props.getProfiles();
-
+const Profiles = ({ history, profiles }) => {
   let goHome = event => {
     event.preventDefault();
     history.push("/user");
   };
-
-  /*   let findProfile = event => {
-    event.preventDefault();
-    history.push("/profiletemp");
-  }; */
 
   let goGoGadgetProfile = id => {
     //services.profiles.one(id).then(prfl => getOneProfile(prfl));

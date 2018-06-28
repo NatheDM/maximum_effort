@@ -10,6 +10,7 @@ import User from "./User.js";
 import Profiles from "./ProfileList.js";
 import Area from "./Area.js";
 import Reviews from "./Reviews.js";
+import Review from "./Review.js";
 import Profile from "./Profile.js";
 import WriteReview from "./WriteReview.js";
 import services from "../service";
@@ -19,16 +20,23 @@ import "./app.css";
 
 /****** <CONSTANTS /> ******/
 const mapDispatchToProps = dispatch => ({
-  onLoad: payload =>
+  profoOnLoad: payload =>
     dispatch({
       type: "LOAD_PROFILE",
+      payload
+    }),
+
+  revoOnLoad: payload =>
+    dispatch({
+      type: "LOAD_REVIEW",
       payload
     })
 });
 
 /****** <ROUTING THE PAGES /> ******/
-const App = ({ onLoad }) => {
-  services.profiles.all().then(prfl => onLoad(prfl));
+const App = ({ profoOnLoad, revoOnLoad }) => {
+  services.profiles.all().then(prfl => profoOnLoad(prfl));
+  services.reviews.all().then(prfl => revoOnLoad(prfl));
 
   return (
     <div className="page">
@@ -41,7 +49,8 @@ const App = ({ onLoad }) => {
         <Route exact path="/profiles" component={Profiles} />
         <Route path="/profiles/:id" component={Profile} />
         <Route path="/area" component={Area} />
-        <Route path="/reviews" component={Reviews} />
+        <Route exact path="/reviews" component={Reviews} />
+        <Route path="/reviews/:id" component={Review} />
         <Route path="/writereview" component={WriteReview} />
       </div>
     </div>

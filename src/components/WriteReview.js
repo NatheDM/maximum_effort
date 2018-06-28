@@ -22,15 +22,17 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const WriteReview = ({ addReview, history, interests }) => {
-  let nameUser, locCity, locState, locZip, reviewBody;
+  let nameUser, nameLocation, locCity, locState, locStreet, locZip, reviewBody;
 
   let submitForm = event => {
     event.preventDefault();
 
     addReview({
       nameUser: nameUser.value,
+      nameLocation: nameLocation.value,
       locCity: locCity.value,
       locState: locState.value,
+      locStreet: locStreet.value,
       locZip: locZip.value,
       reviewBody: reviewBody.value
     });
@@ -68,6 +70,20 @@ const WriteReview = ({ addReview, history, interests }) => {
             <Col sm={2} componentClass={ControlLabel} />
             <Col sm={6}>
               <FormControl
+                placeholder="Location name"
+                type="text"
+                required
+                inputRef={ref => {
+                  nameLocation = ref;
+                }}
+              />
+            </Col>
+          </FormGroup>
+
+          <FormGroup>
+            <Col sm={2} componentClass={ControlLabel} />
+            <Col sm={6}>
+              <FormControl
                 placeholder="Location city"
                 type="text"
                 required
@@ -87,6 +103,20 @@ const WriteReview = ({ addReview, history, interests }) => {
                 required
                 inputRef={ref => {
                   locState = ref;
+                }}
+              />
+            </Col>
+          </FormGroup>
+
+          <FormGroup>
+            <Col sm={2} componentClass={ControlLabel} />
+            <Col sm={6}>
+              <FormControl
+                placeholder="Location street"
+                type="text"
+                required
+                inputRef={ref => {
+                  locStreet = ref;
                 }}
               />
             </Col>
