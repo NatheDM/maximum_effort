@@ -2,8 +2,8 @@ import React from "react";
 import {
   Jumbotron,
   Grid,
-  Form,
-  FormGroup,
+  // Form,
+  // FormGroup,
   Col,
   // FormControl,
   // ControlLabel,
@@ -12,42 +12,38 @@ import {
 } from "react-bootstrap";
 // import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { Route, Link } from "react-router-dom";
+// import { Route, Link } from "react-router-dom";
+
 const Reviews = props => {
-  let submitForm = event => {
+  let goMap = event => {
     event.preventDefault();
     props.history.push("/area");
   };
+
+  let goWriteReview = event => {
+    event.preventDefault();
+    props.history.push("/writereview");
+  };
+
   return (
     <Jumbotron>
       <Grid>
-        <Form horizontal onSubmit={event => submitForm(event)}>
-          <FormGroup>
-            <Col smOffset={2} sm={6}>
-              <h3>A review.</h3>
-            </Col>
-          </FormGroup>
-          <Col smOffset={2} sm={6}>
-            <Button type="submit">Go to map</Button>
-          </Col>
-        </Form>
-        <ul>
-          <ListItemLink to="/somewhere" />
-          <ListItemLink to="/somewhere-else" />
-        </ul>;
+        <Col smOffset={2} sm={6}>
+          <h3>Local Reviews.</h3>
+        </Col>
+        <Col smOffset={2} sm={6}>
+          <Button type="submit" onClick={event => goWriteReview(event)}>
+            Create review
+          </Button>
+        </Col>
+        <Col smOffset={2} sm={6}>
+          <Button type="submit" onClick={event => goMap(event)}>
+            Go to map
+          </Button>
+        </Col>
       </Grid>
     </Jumbotron>
   );
 };
 
-const ListItemLink = ({ to, ...rest }) => (
-  <Route
-    path={to}
-    children={({ match }) => (
-      <li className={match ? "active" : ""}>
-        <Link to={to} {...rest} />
-      </li>
-    )}
-  />
-);
 export default withRouter(Reviews);

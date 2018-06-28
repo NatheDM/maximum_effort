@@ -11,7 +11,7 @@ import Profiles from "./ProfileList.js";
 import Area from "./Area.js";
 import Reviews from "./Reviews.js";
 import Profile from "./Profile.js";
-//import ProfileAll from "./ProfileAll.js";
+import WriteReview from "./WriteReview.js";
 import services from "../service";
 // import MapWithASearchBox from "./Maps";
 import "./app.css";
@@ -42,6 +42,7 @@ const App = ({ onLoad }) => {
         <Route path="/profiles/:id" component={Profile} />
         <Route path="/area" component={Area} />
         <Route path="/reviews" component={Reviews} />
+        <Route path="/writereview" component={WriteReview} />
       </div>
     </div>
   );

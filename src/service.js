@@ -19,4 +19,11 @@ const profiles = {
   one: id => requests.get(`/profiles/${id}`)
 };
 
-export default { profiles };
+const reviews = {
+  all: page => requests.get(`/reviews`),
+  add: payload => requests.post(`/reviews`, payload),
+  delete: id => requests.delete(`/reviews/${id}`),
+  one: id => requests.delete(`/reviews/${id}`)
+};
+
+export default { profiles, reviews };
