@@ -2,8 +2,8 @@ import React from "react";
 import {
   Jumbotron,
   Grid,
-  Form,
-  FormGroup,
+  //Form,
+  //FormGroup,
   Col,
   // FormControl,
   // ControlLabel,
@@ -12,34 +12,11 @@ import {
   Panel
 } from "react-bootstrap";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
-import services from "../service";
+//import { withRouter } from "react-router-dom";
+//import services from "../service";
 
 const mapStateToProps = state => ({
   profiles: state.profiles
-});
-
-const mapDispatchToProps = dispatch => ({
-  removeProfile: _id =>
-    dispatch({
-      type: "REMOVE_PROFILE",
-      payload: _id
-    }),
-
-  getOneProfile: payload =>
-    dispatch({
-      type: "LOAD_ONE_PROFILE",
-      payload
-    })
-
-  /*   getProfiles: payload => {
-    services.profiles.all().then(prfl =>
-      dispatch({
-        type: "LOAD_PROFILE",
-        payload: prfl
-      })
-    );
-  } */
 });
 
 const Profiles = ({ history, profiles, getProfiles, getOneProfile }) => {
@@ -50,13 +27,13 @@ const Profiles = ({ history, profiles, getProfiles, getOneProfile }) => {
     history.push("/user");
   };
 
-  let findProfile = event => {
+  /*   let findProfile = event => {
     event.preventDefault();
     history.push("/profiletemp");
-  };
+  }; */
 
   let goGoGadgetProfile = id => {
-    services.profiles.one(id).then(prfl => getOneProfile(prfl));
+    //services.profiles.one(id).then(prfl => getOneProfile(prfl));
     history.push("/profiles/" + id);
   };
 
@@ -92,16 +69,13 @@ const Profiles = ({ history, profiles, getProfiles, getOneProfile }) => {
           </Button>
         </Col>
         <Col smOffset={2} sm={6}>
-          <Button type="submit" onClick={event => findProfile(event)}>
+          {/*           <Button type="submit" onClick={event => findProfile(event)}>
             A profile.
-          </Button>
+          </Button> */}
         </Col>
       </Grid>
     </Jumbotron>
   );
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Profiles);
+export default connect(mapStateToProps)(Profiles);

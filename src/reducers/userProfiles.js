@@ -9,7 +9,7 @@ const profiles = (state = [], action) => {
       services.profiles.add({ ...action.payload });
       return [...state, { ...action.payload, _id: profileID }];
     case "LOAD_PROFILE":
-      var profArray = [...action.payload];
+      // var profArray = [...action.payload];
       return action.payload;
     case "LOAD_ONE_PROFILE":
       var profOne = { ...action.payload };
