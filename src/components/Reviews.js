@@ -1,28 +1,37 @@
 import React from "react";
 import { Jumbotron, Grid, Col, Button, Panel } from "react-bootstrap";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 const mapStateToProps = state => ({
   reviews: state.reviews
 });
 
 const Reviews = ({ history, reviews }) => {
-  let goMap = event => {
+  /*   let goMap = event => {
     event.preventDefault();
     history.push("/area");
   };
 
-  let goWriteReview = event => {
+    let goWriteReview = event => {
     event.preventDefault();
     history.push("/writereview");
-  };
+  }; */
 
   let goGoGadgetReview = id => {
+    console.log(id);
     history.push("/reviews/" + id);
   };
 
   return (
-    <Jumbotron>
+    <Jumbotron
+      //Added style to align on the left-side of the webpage
+      style={{
+        position: "relative",
+        right: "400px",
+        width: "790px"
+      }}
+    >
       <Col smOffset={2} sm={6}>
         <h3>Local Reviews.</h3>
       </Col>
@@ -49,19 +58,14 @@ const Reviews = ({ history, reviews }) => {
           </Col>
         ))}
 
-        <Col smOffset={2} sm={6}>
+        {/*         <Col smOffset={2} sm={6}>
           <Button type="submit" onClick={event => goWriteReview(event)}>
             Create review
           </Button>
-        </Col>
-        <Col smOffset={2} sm={6}>
-          <Button type="submit" onClick={event => goMap(event)}>
-            Go to map
-          </Button>
-        </Col>
+        </Col> */}
       </Grid>
     </Jumbotron>
   );
 };
 
-export default connect(mapStateToProps)(Reviews);
+export default withRouter(connect(mapStateToProps)(Reviews));

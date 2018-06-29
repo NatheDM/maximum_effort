@@ -80,7 +80,11 @@ const MapWithASearchBox = compose(
           height: `400px`,
           position: "relative",
           right: "-450px",
-          bottom: "-30px"
+          bottom: "-30px",
+          position: "absolute",
+          left: "500px",
+          top: "60px",
+          zindex: "5"
         }}
       />
     ),
@@ -93,8 +97,8 @@ const MapWithASearchBox = compose(
       this.setState({
         bounds: null,
         center: {
-          lat: 33.448377,
-          lng: -112.074037
+          lat: 33.454417,
+          lng: -111.986495
         },
         markers: [],
         onMapMounted: ref => {
@@ -142,7 +146,7 @@ const MapWithASearchBox = compose(
 )(props => (
   <GoogleMap
     ref={props.onMapMounted}
-    defaultZoom={15}
+    defaultZoom={10}
     center={props.center}
     // onBoundsChanged={props.onBoundsChanged}
   >

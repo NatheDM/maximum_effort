@@ -11,7 +11,7 @@ const Review = ({ history, reviews, match }) => {
 
   let findReviews = event => {
     event.preventDefault();
-    history.push("/reviews");
+    history.push("/area");
   };
 
   return (

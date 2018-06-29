@@ -39,7 +39,7 @@ const WriteReview = ({ addReview, history, interests }) => {
 
     console.log(nameUser.value);
 
-    history.push("/reviews");
+    history.push("/area");
   };
 
   return (
