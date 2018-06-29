@@ -53,7 +53,7 @@ const SignUp = ({ addProfile, history, interests }) => {
       interest: interest.value
     });
 
-    history.push("/user");
+    history.push("/area");
   };
 
   return (

@@ -6,7 +6,7 @@ import Header from "./Header.js";
 import Home from "./Home.js";
 import SignUp from "./SignUp.js";
 import LogIn from "./LogIn.js";
-import User from "./User.js";
+import About from "./About.js";
 import Profiles from "./ProfileList.js";
 import Area from "./Area.js";
 import Reviews from "./Reviews.js";
@@ -45,7 +45,7 @@ const App = ({ profoOnLoad, revoOnLoad }) => {
         <Route exact path="/" component={Home} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={LogIn} />
-        <Route path="/user" component={User} />
+        <Route path="/about" component={About} />
         <Route exact path="/profiles" component={Profiles} />
         <Route path="/profiles/:id" component={Profile} />
         <Route path="/area" component={Area} />

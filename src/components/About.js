@@ -13,7 +13,7 @@ import {
 // import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
-const User = props => {
+const About = props => {
   let findProfiles = event => {
     event.preventDefault();
     props.history.push("/profiles");
@@ -30,7 +30,7 @@ const User = props => {
         <Form horizontal>
           <FormGroup>
             <Col smOffset={2} sm={6}>
-              <h3>User home.</h3>
+              <h3>About page.</h3>
             </Col>
           </FormGroup>
 
@@ -51,4 +51,4 @@ const User = props => {
   );
 };
 
-export default withRouter(User);
+export default withRouter(About);

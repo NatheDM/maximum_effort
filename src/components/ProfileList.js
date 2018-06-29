@@ -20,7 +20,7 @@ const mapStateToProps = state => ({
 const Profiles = ({ history, profiles }) => {
   let goHome = event => {
     event.preventDefault();
-    history.push("/user");
+    history.push("/area");
   };
 
   let goGoGadgetProfile = id => {
@@ -56,7 +56,7 @@ const Profiles = ({ history, profiles }) => {
         ))}
         <Col smOffset={2} sm={6}>
           <Button type="submit" onClick={event => goHome(event)}>
-            User Home
+            Area Map
           </Button>
         </Col>
         <Col smOffset={2} sm={6}>

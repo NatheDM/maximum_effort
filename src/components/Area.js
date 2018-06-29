@@ -16,9 +16,9 @@ import MapWithASearchBox from "./Maps.js";
 import Reviews from "./Reviews.js";
 
 const Area = props => {
-  let goHome = event => {
+  let goPro = event => {
     event.preventDefault();
-    props.history.push("/user");
+    props.history.push("/profiles");
   };
 
   /*   let findReviews = event => {
@@ -60,9 +60,9 @@ const Area = props => {
               top: "-230px"
             }}
             type="submit"
-            onClick={event => goHome(event)}
+            onClick={event => goPro(event)}
           >
-            User Home
+            Profile List
           </Button>
         </Col>
 

@@ -33,7 +33,7 @@ const LogIn = ({ loadProfile, history }) => {
       password: password.value
     });
 
-    history.push("/user");
+    history.push("/area");
   };
 
   return (
