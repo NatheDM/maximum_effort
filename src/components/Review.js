@@ -1,6 +1,8 @@
 import React from "react";
+import ReactDom from "react-dom";
 import { Jumbotron, Grid, Col, Panel, Form, Button } from "react-bootstrap";
 import { connect } from "react-redux";
+import Popup from "react-popup";
 
 const mapStateToProps = state => ({
   reviews: state.reviews
@@ -16,30 +18,34 @@ const Review = ({ history, reviews, match }) => {
 
   return (
     <Jumbotron>
-      <Grid>
-        <Form horizontal>
-          <Panel>
-            <Panel.Heading>
-              <Panel.Title />
-            </Panel.Heading>
-            {myRevo && (
+      <Popup />
+      {myRevo && (
+        <Grid>
+          <Form horizontal>
+            <Panel>
+              <Panel.Heading>
+                <Panel.Title>
+                  {myRevo.nameLocation}, {myRevo.locStreet}, {myRevo.locCity},{" "}
+                  {myRevo.locState} {myRevo.locZip}{" "}
+                </Panel.Title>
+              </Panel.Heading>
+
               <Panel.Body>
-                Location: {myRevo.nameLocation}
-                <br />
-                Address: {myRevo.locStreet}, {myRevo.locCity}, {myRevo.locState}{" "}
-                {myRevo.locZip}
-                <br />
-                Review: {myRevo.reviewBody}
+                {/*                 <br />
+                <div>
+                  <img src="../images/eyeCat.jpg" alt="cat" />
+                </div> */}
+                {myRevo.reviewBody}
               </Panel.Body>
-            )}
-          </Panel>
-          <Col smOffset={2} sm={6}>
-            <Button type="submit" onClick={event => findReviews(event)}>
-              Find reviews
-            </Button>
-          </Col>
-        </Form>
-      </Grid>
+            </Panel>
+            <Col smOffset={2} sm={6}>
+              <Button type="submit" onClick={event => findReviews(event)}>
+                Find reviews
+              </Button>
+            </Col>
+          </Form>
+        </Grid>
+      )}
     </Jumbotron>
   );
 };

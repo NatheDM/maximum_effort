@@ -35,25 +35,29 @@ const SignUp = ({ addProfile, history, interests }) => {
     homeZip,
     email,
     password,
+    confirmPassword,
     interest;
 
   let submitForm = event => {
     event.preventDefault();
 
-    addProfile({
-      nameFirst: nameFirst.value,
-      nameLast: nameLast.value,
-      nameUser: nameUser.value,
-      dateBirth: dateBirth.value,
-      homeCity: homeCity.value,
-      homeState: homeState.value,
-      homeZip: homeZip.value,
-      email: email.value,
-      password: password.value,
-      interest: interest.value
-    });
-
-    history.push("/area");
+    if (password.value === confirmPassword.value) {
+      addProfile({
+        nameFirst: nameFirst.value,
+        nameLast: nameLast.value,
+        nameUser: nameUser.value,
+        dateBirth: dateBirth.value,
+        homeCity: homeCity.value,
+        homeState: homeState.value,
+        homeZip: homeZip.value,
+        email: email.value,
+        password: password.value,
+        interest: interest.value
+      });
+      history.push("/area");
+    } else {
+      alert("Passwords must match.");
+    }
   };
 
   return (
@@ -183,10 +187,24 @@ const SignUp = ({ addProfile, history, interests }) => {
             <Col sm={6}>
               <FormControl
                 placeholder="Password"
-                type="text"
+                type="password"
                 required
                 inputRef={ref => {
                   password = ref;
+                }}
+              />
+            </Col>
+          </FormGroup>
+
+          <FormGroup>
+            <Col sm={2} componentClass={ControlLabel} />
+            <Col sm={6}>
+              <FormControl
+                placeholder="Confirm password"
+                type="password"
+                required
+                inputRef={ref => {
+                  confirmPassword = ref;
                 }}
               />
             </Col>
