@@ -10,10 +10,16 @@ import {
   // Radio,
   Button
 } from "react-bootstrap";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import MapWithASearchBox from "./Maps.js";
+import Modal from "./Modal.js";
+
 import Reviews from "./Reviews.js";
+
+const mapStateToProps = state => ({
+  mapCenter: state.mapCenter
+});
 
 const Area = props => {
   let goPro = event => {
@@ -48,6 +54,8 @@ const Area = props => {
           <MapWithASearchBox />
         </Col>
 
+        {console.log(props.mapCenter)}
+
         {/* Changed the smOffset from "2" sm="6", to "2" sm="-10" for both
             buttons to align to the top of the page.  --James  */}
         <Col smOffset={-2} sm={6}>
@@ -65,7 +73,6 @@ const Area = props => {
             Profile List
           </Button>
         </Col>
-
         {/*         <Col smOffset={2} sm={-10}>
           <Button
             //Aligned Local Reviews below Userhome//
@@ -80,7 +87,6 @@ const Area = props => {
             Local Reviews
           </Button>
         </Col> */}
-
         <Col smOffset={2} sm={-10}>
           <Button
             style={{
@@ -99,4 +105,4 @@ const Area = props => {
   );
 };
 
-export default withRouter(Area);
+export default withRouter(connect(mapStateToProps)(Area));

@@ -103,7 +103,7 @@ const SignUp = ({ addProfile, history, interests }) => {
             <Col sm={6}>
               <FormControl
                 placeholder="Birth datte"
-                type="text"
+                type="date"
                 required
                 inputRef={ref => {
                   dateBirth = ref;
@@ -145,7 +145,7 @@ const SignUp = ({ addProfile, history, interests }) => {
             <Col sm={6}>
               <FormControl
                 placeholder="Home zip code"
-                type="text"
+                type="number"
                 required
                 inputRef={ref => {
                   homeZip = ref;
@@ -173,7 +173,7 @@ const SignUp = ({ addProfile, history, interests }) => {
             <Col sm={6}>
               <FormControl
                 placeholder="E-mail"
-                type="text"
+                type="email"
                 required
                 inputRef={ref => {
                   email = ref;

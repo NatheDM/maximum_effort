@@ -1,8 +1,7 @@
 import React from "react";
-import ReactDom from "react-dom";
+// import ReactDom from "react-dom";
 import { Jumbotron, Grid, Col, Panel, Form, Button } from "react-bootstrap";
 import { connect } from "react-redux";
-import Popup from "react-popup";
 
 const mapStateToProps = state => ({
   reviews: state.reviews
@@ -18,7 +17,6 @@ const Review = ({ history, reviews, match }) => {
 
   return (
     <Jumbotron>
-      <Popup />
       {myRevo && (
         <Grid>
           <Form horizontal>

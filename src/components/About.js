@@ -31,20 +31,23 @@ const About = props => {
           <FormGroup>
             <Col smOffset={2} sm={6}>
               <h3>About page.</h3>
+              <div>
+                Maximum_Effort is a webapp that aims to provide pertinent
+                information about locales to inform user of what places to
+                avoid, so as to enhance their travel experiences.
+                <br />
+                <br />
+                Maximum_Effort is designed by:
+                <ul>
+                  <li>Jonathan Moss</li>
+                  <li>Steve Olson</li>
+                  <li>James Suell</li>
+                </ul>
+                <br />
+                Our company contact info goes here.
+              </div>
             </Col>
           </FormGroup>
-
-          <Col smOffset={2} sm={6}>
-            <Button type="submit" onClick={event => findProfiles(event)}>
-              Find profiles
-            </Button>
-          </Col>
-
-          <Col smOffset={2} sm={6}>
-            <Button type="submit" onClick={event => findArea(event)}>
-              Go to map
-            </Button>
-          </Col>
         </Form>
       </Grid>
     </Jumbotron>

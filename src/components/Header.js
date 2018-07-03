@@ -1,6 +1,10 @@
 import React from "react";
 import { Navbar, NavItem, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import Modal from "./Modal.js";
+import SignUp from "./SignUp.js";
+import About from "./About.js";
+import LogIn from "./LogIn.js";
 
 const Header = props => {
   return (
@@ -12,19 +16,29 @@ const Header = props => {
           </a>
         </Navbar.Brand>
       </Navbar.Header>
-      <Nav pullRight>
-        <LinkContainer to="/about">
-          <NavItem eventKey={1}>About</NavItem>
-        </LinkContainer>
-        <LinkContainer exact to="/signup">
-          <NavItem eventKey={2}>Sign Up</NavItem>
-        </LinkContainer>
-        <LinkContainer to="/login">
-          <NavItem eventKey={3}>Log in</NavItem>
-        </LinkContainer>
+      <Nav pullRight className="navModal">
+        <li className="navModal">
+          <Modal className="modal" name="About">
+            <About />
+          </Modal>
+        </li>
+        <li className="navModal">
+          <Modal className="modal" name="Sign up">
+            <SignUp />
+          </Modal>
+        </li>
+        <li className="navModal">
+          <Modal className="modal" name="Log in">
+            <LogIn />
+          </Modal>
+        </li>
       </Nav>
     </Navbar>
   );
 };
 
 export default Header;
+
+<Modal className="modal" name="Modal">
+  <SignUp />
+</Modal>;
