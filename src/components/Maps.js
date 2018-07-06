@@ -9,9 +9,8 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 /***************************************
-      ⯆⯆⯆ STEVE LOOK RIGHT BELOW HERE ⯆⯆⯆
-      ***************************************/
-
+ ⯆⯆⯆ STEVE LOOK RIGHT BELOW HERE ⯆⯆⯆
+ ***************************************/
 const mapDispatchToProps = dispatch => ({
   fillBox: stuff =>
     dispatch({
@@ -20,8 +19,8 @@ const mapDispatchToProps = dispatch => ({
     })
 });
 /***************************************
-      ⯅⯅⯅ STEVE LOOK RIGHT ABOVE HERE ⯅⯅⯅
-      ***************************************/
+ ⯅⯅⯅ STEVE LOOK RIGHT ABOVE HERE ⯅⯅⯅
+ ***************************************/
 
 const google = window.google;
 
@@ -115,9 +114,7 @@ const MapWithASearchBox = compose(
     {/***************************************
       ⯆⯆⯆ STEVE LOOK RIGHT BELOW HERE ⯆⯆⯆
       ***************************************/}
-
     {/* props.fillBox(props.center) */}
-
     {/***************************************
       ⯅⯅⯅ STEVE LOOK RIGHT ABOVE HERE ⯅⯅⯅
       ***************************************/}
