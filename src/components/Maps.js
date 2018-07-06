@@ -105,15 +105,15 @@ const MapWithASearchBox = compose(
     center={props.center}
     // onBoundsChanged={props.onBoundsChanged}
   >
-    {/**********************************
-      STEVE LOOK RIGHT BELOW HERE!!
-    ***********************************/}
+    {/***************************************
+      ⯆⯆⯆ STEVE LOOK RIGHT BELOW HERE ⯆⯆⯆
+      ***************************************/}
 
     {/* props.fillBox(props.center) */}
 
-    {/**********************************
-      STEVE LOOK RIGHT ABOVE HERE!!
-    ***********************************/}
+    {/***************************************
+      ⯅⯅⯅ STEVE LOOK RIGHT ABOVE HERE ⯅⯅⯅
+      ***************************************/}
 
     <SearchBox
       ref={props.onSearchBoxMounted}
