@@ -9,9 +9,10 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 const mapDispatchToProps = dispatch => ({
-  updateCenter: thing =>
+  fillBox: stuff =>
     dispatch({
-      payload: thing
+      type: "MAP_CENTER",
+      payload: stuff
     })
 });
 
@@ -87,14 +88,10 @@ const MapWithASearchBox = compose(
             "0.position",
             this.state.center
           );
-
           this.setState({
             center: nextCenter,
             markers: nextMarkers
           });
-
-          this.updateCenter(this.center);
-          console.log(this.center);
         }
       });
     }
@@ -108,6 +105,16 @@ const MapWithASearchBox = compose(
     center={props.center}
     // onBoundsChanged={props.onBoundsChanged}
   >
+    {/**********************************
+      STEVE LOOK RIGHT BELOW HERE!!
+    ***********************************/}
+
+    {/* props.fillBox(props.center) */}
+
+    {/**********************************
+      STEVE LOOK RIGHT ABOVE HERE!!
+    ***********************************/}
+
     <SearchBox
       ref={props.onSearchBoxMounted}
       bounds={props.bounds}

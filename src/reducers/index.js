@@ -3,10 +3,12 @@ import { combineReducers } from "redux";
 import interests from "./interests.js";
 import profiles from "./userProfiles.js";
 import reviews from "./userReviews.js";
+import mapCenter from "./mapCenter.js";
 /****** </INITIAL IMPORT STATEMENTS> ******/
 
 export default combineReducers({
   interests,
   profiles,
-  reviews
+  reviews,
+  mapCenter
 });

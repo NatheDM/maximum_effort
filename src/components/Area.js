@@ -17,6 +17,11 @@ const Area = props => {
     props.history.push("/profiles");
   };
 
+  const myCenter = { ...props.mapCenter.payload };
+
+  console.log("Center Latitude: " + myCenter.lat);
+  console.log("Center Longitude: " + myCenter.lng);
+
   return (
     <Jumbotron>
       <Grid>
@@ -26,8 +31,6 @@ const Area = props => {
 
           <MapWithASearchBox />
         </Col>
-
-        {console.log(props.mapCenter)}
 
         <Col smOffset={-2} sm={6}>
           <Button
