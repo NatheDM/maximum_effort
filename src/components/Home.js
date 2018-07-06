@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Jumbotron,
-  Grid,
-  //Button,
-  Well
-} from "react-bootstrap";
-// import { LinkContainer } from "react-router-bootstrap";
-// import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-map-react";
+import { Jumbotron, Grid, Well } from "react-bootstrap";
 
 const Home = props => (
   <Jumbotron>

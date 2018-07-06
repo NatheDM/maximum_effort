@@ -7,7 +7,6 @@ import {
   Col,
   FormControl,
   ControlLabel,
-  // Radio,
   Button
 } from "react-bootstrap";
 import { connect } from "react-redux";
@@ -21,7 +20,7 @@ const mapDispatchToProps = dispatch => ({
     })
 });
 
-const WriteReview = ({ addReview, history, interests }) => {
+const WriteReview = ({ addReview, history, interests, toggle }) => {
   let nameUser, nameLocation, locCity, locState, locStreet, locZip, reviewBody;
 
   let submitForm = event => {
@@ -37,9 +36,12 @@ const WriteReview = ({ addReview, history, interests }) => {
       reviewBody: reviewBody.value
     });
 
-    console.log(nameUser.value);
+    toggle();
+  };
 
-    history.push("/area");
+  let kill = event => {
+    event.preventDefault();
+    toggle();
   };
 
   return (
@@ -152,6 +154,7 @@ const WriteReview = ({ addReview, history, interests }) => {
 
           <Col smOffset={2} sm={6}>
             <Button type="submit">Submit</Button>
+            <Button onClick={theThing => kill(theThing)}>Close</Button>
           </Col>
         </Form>
       </Grid>

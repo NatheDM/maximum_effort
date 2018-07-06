@@ -1,6 +1,5 @@
 import React from "react";
-import { Navbar, NavItem, Nav } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import Modal from "./Modal.js";
 import SignUp from "./SignUp.js";
 import About from "./About.js";
@@ -38,7 +37,3 @@ const Header = props => {
 };
 
 export default Header;
-
-<Modal className="modal" name="Modal">
-  <SignUp />
-</Modal>;

@@ -1,5 +1,4 @@
 import React from "react";
-// import ReactDom from "react-dom";
 import { Jumbotron, Grid, Col, Panel, Form, Button } from "react-bootstrap";
 import { connect } from "react-redux";
 
@@ -7,12 +6,12 @@ const mapStateToProps = state => ({
   reviews: state.reviews
 });
 
-const Review = ({ history, reviews, match }) => {
-  let myRevo = reviews.filter(rvw => rvw._id === match.params.id)[0];
+const Review = ({ history, reviews, match, toggle, id }) => {
+  let myRevo = reviews.filter(rvw => rvw._id === id)[0];
 
-  let findReviews = event => {
+  let closeModal = event => {
     event.preventDefault();
-    history.push("/area");
+    toggle();
   };
 
   return (
@@ -28,17 +27,11 @@ const Review = ({ history, reviews, match }) => {
                 </Panel.Title>
               </Panel.Heading>
 
-              <Panel.Body>
-                {/*                 <br />
-                <div>
-                  <img src="../images/eyeCat.jpg" alt="cat" />
-                </div> */}
-                {myRevo.reviewBody}
-              </Panel.Body>
+              <Panel.Body>{myRevo.reviewBody}</Panel.Body>
             </Panel>
             <Col smOffset={2} sm={6}>
-              <Button type="submit" onClick={event => findReviews(event)}>
-                Find reviews
+              <Button type="submit" onClick={event => closeModal(event)}>
+                Close
               </Button>
             </Col>
           </Form>

@@ -1,27 +1,10 @@
 import React from "react";
-import {
-  Jumbotron,
-  Grid,
-  Form,
-  FormGroup,
-  Col,
-  // FormControl,
-  // ControlLabel,
-  // Radio,
-  Button
-} from "react-bootstrap";
-// import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { Jumbotron, Grid, Form, FormGroup, Col, Button } from "react-bootstrap";
 
 const About = props => {
-  let findProfiles = event => {
+  let kill = event => {
     event.preventDefault();
-    props.history.push("/profiles");
-  };
-
-  let findArea = event => {
-    event.preventDefault();
-    props.history.push("/area");
+    props.toggle();
   };
 
   return (
@@ -50,8 +33,11 @@ const About = props => {
           </FormGroup>
         </Form>
       </Grid>
+      <Col smOffset={2} sm={6}>
+        <Button onClick={theThing => kill(theThing)}>Close</Button>
+      </Col>
     </Jumbotron>
   );
 };
 
-export default withRouter(About);
+export default About;

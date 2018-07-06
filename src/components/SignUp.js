@@ -7,7 +7,6 @@ import {
   Col,
   FormControl,
   ControlLabel,
-  // Radio,
   Button
 } from "react-bootstrap";
 import { connect } from "react-redux";
@@ -25,7 +24,7 @@ const mapDispatchToProps = dispatch => ({
     })
 });
 
-const SignUp = ({ addProfile, history, interests }) => {
+const SignUp = ({ addProfile, history, interests, toggle }) => {
   let nameFirst,
     nameLast,
     nameUser,
@@ -54,7 +53,10 @@ const SignUp = ({ addProfile, history, interests }) => {
         password: password.value,
         interest: interest.value
       });
+
       history.push("/area");
+
+      toggle();
     } else {
       alert("Passwords must match.");
     }

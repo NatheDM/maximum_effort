@@ -1,17 +1,8 @@
 import React from "react";
-import {
-  Jumbotron,
-  Grid,
-  //Form,
-  //FormGroup,
-  Col,
-  // FormControl,
-  // ControlLabel,
-  // Radio,
-  Button,
-  Panel
-} from "react-bootstrap";
+import { Jumbotron, Grid, Col, Button, Panel } from "react-bootstrap";
 import { connect } from "react-redux";
+import Modal from "./Modal.js";
+import Profile from "./Profile.js";
 
 const mapStateToProps = state => ({
   profiles: state.profiles
@@ -23,11 +14,6 @@ const Profiles = ({ history, profiles }) => {
     history.push("/area");
   };
 
-  let goGoGadgetProfile = id => {
-    //services.profiles.one(id).then(prfl => getOneProfile(prfl));
-    history.push("/profiles/" + id);
-  };
-
   return (
     <Jumbotron>
       <Grid>
@@ -36,13 +22,9 @@ const Profiles = ({ history, profiles }) => {
           <Col sm={4} key={prfl._id}>
             <Panel>
               <Panel.Heading>
-                <Button
-                  onClick={() => {
-                    goGoGadgetProfile(prfl._id);
-                  }}
-                >
-                  <Panel.Title>{prfl.nameUser}</Panel.Title>
-                </Button>
+                <Modal className="modal" name={prfl.nameUser}>
+                  <Profile id={prfl._id} />
+                </Modal>
               </Panel.Heading>
               <Panel.Body>
                 ID: {prfl._id}
@@ -59,11 +41,7 @@ const Profiles = ({ history, profiles }) => {
             Area Map
           </Button>
         </Col>
-        <Col smOffset={2} sm={6}>
-          {/*           <Button type="submit" onClick={event => findProfile(event)}>
-            A profile.
-          </Button> */}
-        </Col>
+        <Col smOffset={2} sm={6} />
       </Grid>
     </Jumbotron>
   );

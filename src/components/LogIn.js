@@ -21,7 +21,7 @@ const mapDispatchToProps = dispatch => ({
     })
 });
 
-const LogIn = ({ loadProfile, history }) => {
+const LogIn = ({ loadProfile, history, toggle }) => {
   let nameUser;
   let password;
 
@@ -34,6 +34,8 @@ const LogIn = ({ loadProfile, history }) => {
     });
 
     history.push("/area");
+
+    toggle();
   };
 
   return (

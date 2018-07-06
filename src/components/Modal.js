@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 
 const display = {
   display: "block"
@@ -30,10 +29,7 @@ class Modal extends React.Component {
     var modal = [];
     modal.push(
       <div className="modal" style={this.state.toggle ? display : hide}>
-        {this.props.children}
-        <button className="butts" onClick={this.toggle}>
-          Close
-        </button>
+        {React.cloneElement(this.props.children, { toggle: this.toggle })}
       </div>
     );
     return (
