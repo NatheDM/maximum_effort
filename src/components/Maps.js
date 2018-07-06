@@ -8,6 +8,10 @@ import {
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
+/***************************************
+      ⯆⯆⯆ STEVE LOOK RIGHT BELOW HERE ⯆⯆⯆
+      ***************************************/
+
 const mapDispatchToProps = dispatch => ({
   fillBox: stuff =>
     dispatch({
@@ -15,6 +19,9 @@ const mapDispatchToProps = dispatch => ({
       payload: stuff
     })
 });
+/***************************************
+      ⯅⯅⯅ STEVE LOOK RIGHT ABOVE HERE ⯅⯅⯅
+      ***************************************/
 
 const google = window.google;
 
