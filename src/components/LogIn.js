@@ -38,6 +38,11 @@ const LogIn = ({ loadProfile, history, toggle }) => {
     toggle();
   };
 
+  let kill = event => {
+    event.preventDefault();
+    toggle();
+  };
+
   return (
     <Jumbotron>
       <Grid>
@@ -80,6 +85,7 @@ const LogIn = ({ loadProfile, history, toggle }) => {
 
           <Col smOffset={2} sm={6}>
             <Button type="submit">Submit</Button>
+            <Button onClick={theThing => kill(theThing)}>Close</Button>
           </Col>
         </Form>
       </Grid>

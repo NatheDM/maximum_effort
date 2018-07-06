@@ -62,6 +62,11 @@ const SignUp = ({ addProfile, history, interests, toggle }) => {
     }
   };
 
+  let kill = event => {
+    event.preventDefault();
+    toggle();
+  };
+
   return (
     <Jumbotron>
       <Grid>
@@ -237,6 +242,7 @@ const SignUp = ({ addProfile, history, interests, toggle }) => {
 
           <Col smOffset={2} sm={6}>
             <Button type="submit">Submit</Button>
+            <Button onClick={theThing => kill(theThing)}>Close</Button>
           </Col>
         </Form>
       </Grid>
