@@ -1,28 +1,15 @@
 import React from "react";
 import { Jumbotron, Grid, Col, Button } from "react-bootstrap";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
 import MapWithASearchBox from "./Maps.js";
 import Modal from "./Modal.js";
 import Reviews from "./Reviews.js";
 import WriteReview from "./WriteReview.js";
-
-const mapStateToProps = state => ({
-  mapCenter: state.mapCenter
-});
 
 const Area = props => {
   let goPro = event => {
     event.preventDefault();
     props.history.push("/profiles");
   };
-
-  let myCenter = { ...props.mapCenter.payload };
-
-  /*   if (myCenter) {
-    console.log("Center Latitude: " + myCenter.lat);
-    console.log("Center Longitude: " + myCenter.lng);
-  } */
 
   return (
     <Jumbotron>
@@ -65,4 +52,4 @@ const Area = props => {
   );
 };
 
-export default withRouter(connect(mapStateToProps)(Area));
+export default Area;
