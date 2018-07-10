@@ -12,23 +12,13 @@ const mapStateToProps = state => ({
 
 const Reviews = ({ history, reviews, mapCenter }) => {
   let myCenter = { ...mapCenter.payload };
-  console.log(myCenter);
-
   let latMin = parseFloat(myCenter.lat - 0.125);
-  console.log("latMin: " + latMin);
-
   let latMax = parseFloat(myCenter.lat - -0.125);
-  console.log("latMax: " + latMax);
-
   let lngMin = parseFloat(myCenter.lng - 0.125);
-  console.log("lngMin: " + lngMin);
-
   let lngMax = parseFloat(myCenter.lng - -0.125);
-  console.log("lngMax: " + lngMax);
 
   return (
     <Jumbotron
-      //Added style to align on the left-side of the webpage
       style={{
         position: "relative",
         right: "400px",
