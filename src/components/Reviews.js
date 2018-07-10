@@ -6,10 +6,26 @@ import Modal from "./Modal.js";
 import Review from "./Review.js";
 
 const mapStateToProps = state => ({
-  reviews: state.reviews
+  reviews: state.reviews,
+  mapCenter: state.mapCenter
 });
 
-const Reviews = ({ history, reviews }) => {
+const Reviews = ({ history, reviews, mapCenter }) => {
+  let myCenter = { ...mapCenter.payload };
+  console.log(myCenter);
+
+  let latMin = parseFloat(myCenter.lat - 0.125);
+  console.log("latMin: " + latMin);
+
+  let latMax = parseFloat(myCenter.lat - -0.125);
+  console.log("latMax: " + latMax);
+
+  let lngMin = parseFloat(myCenter.lng - 0.125);
+  console.log("lngMin: " + lngMin);
+
+  let lngMax = parseFloat(myCenter.lng - -0.125);
+  console.log("lngMax: " + lngMax);
+
   return (
     <Jumbotron
       //Added style to align on the left-side of the webpage
@@ -24,22 +40,32 @@ const Reviews = ({ history, reviews }) => {
       </Col>
       <Grid>
         {!reviews.length && <h3>no reviews found</h3>}
-        {reviews.map(rvw => (
-          <Col sm={4} key={rvw._id}>
-            <Panel>
-              <Panel.Heading>
-                <Modal className="modal" name={rvw.nameLocation}>
-                  <Review id={rvw._id} />
-                </Modal>
-              </Panel.Heading>
-              <Panel.Body>
-                Location: {rvw.nameLocation}
-                <br />
-                Zip: {rvw.locZip}
-              </Panel.Body>
-            </Panel>
-          </Col>
-        ))}
+        {reviews.map(rvw => {
+          if (latMin <= rvw.center.lat) {
+            if (rvw.center.lat <= latMax) {
+              if (lngMin <= rvw.center.lng) {
+                if (rvw.center.lng <= lngMax) {
+                  return (
+                    <Col sm={4} key={rvw._id}>
+                      <Panel>
+                        <Panel.Heading>
+                          <Modal className="modal" name={rvw.nameLocation}>
+                            <Review id={rvw._id} />
+                          </Modal>
+                        </Panel.Heading>
+                        <Panel.Body>
+                          Location: {rvw.nameLocation}
+                          <br />
+                          Zip: {rvw.locZip}
+                        </Panel.Body>
+                      </Panel>
+                    </Col>
+                  );
+                }
+              }
+            }
+          }
+        })}
       </Grid>
     </Jumbotron>
   );

@@ -17,12 +17,12 @@ const Area = props => {
     props.history.push("/profiles");
   };
 
-  const myCenter = { ...props.mapCenter.payload };
+  let myCenter = { ...props.mapCenter.payload };
 
-  if (myCenter) {
+  /*   if (myCenter) {
     console.log("Center Latitude: " + myCenter.lat);
     console.log("Center Longitude: " + myCenter.lng);
-  }
+  } */
 
   return (
     <Jumbotron>
