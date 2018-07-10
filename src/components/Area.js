@@ -19,8 +19,10 @@ const Area = props => {
 
   const myCenter = { ...props.mapCenter.payload };
 
-  console.log("Center Latitude: " + myCenter.lat);
-  console.log("Center Longitude: " + myCenter.lng);
+  if (myCenter) {
+    console.log("Center Latitude: " + myCenter.lat);
+    console.log("Center Longitude: " + myCenter.lng);
+  }
 
   return (
     <Jumbotron>

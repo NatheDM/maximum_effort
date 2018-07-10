@@ -51,6 +51,8 @@ body {
 .modal {
   position: fixed;
   width: 35%;
+  max-height: 75%;
+  overflow: auto !important;
   margin: auto;
   vertical-align: center !important;
   background: rgba(238, 238, 238, 0.8) !important;

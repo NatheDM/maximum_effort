@@ -7,10 +7,8 @@ import {
 } from "react-google-maps";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import { componentDidUpdate } from "react-google-maps/lib/utils/MapChildHelper";
 
-/***************************************
- ⯆⯆⯆ STEVE LOOK RIGHT BELOW HERE ⯆⯆⯆
- ***************************************/
 const mapDispatchToProps = dispatch => ({
   fillBox: stuff =>
     dispatch({
@@ -18,9 +16,6 @@ const mapDispatchToProps = dispatch => ({
       payload: stuff
     })
 });
-/***************************************
- ⯅⯅⯅ STEVE LOOK RIGHT ABOVE HERE ⯅⯅⯅
- ***************************************/
 
 const google = window.google;
 
@@ -30,6 +25,8 @@ const { compose, withProps, lifecycle } = require("recompose");
 const {
   SearchBox
 } = require("react-google-maps/lib/components/places/SearchBox");
+
+let myRefs;
 
 const MapWithASearchBox = compose(
   withProps({
@@ -94,12 +91,31 @@ const MapWithASearchBox = compose(
             "0.position",
             this.state.center
           );
+
           this.setState({
             center: nextCenter,
             markers: nextMarkers
           });
         }
       });
+    },
+    componentDidUpdate() {
+      if (this.state.center) {
+        /** Demanding information from the component in a way I can use, and not taking 'no' for an answer **/
+        let myCenter = this.state.center;
+        myCenter = "" + myCenter;
+        myCenter = myCenter
+          .replace("(", "")
+          .replace(")", "")
+          .replace(" ", "")
+          .split(",");
+        myCenter = {
+          lat: myCenter[0],
+          lng: myCenter[1]
+        };
+        this.props.fillBox(myCenter);
+        /** ********************************************************************************************* **/
+      }
     }
   }),
   withScriptjs,
@@ -111,14 +127,6 @@ const MapWithASearchBox = compose(
     center={props.center}
     // onBoundsChanged={props.onBoundsChanged}
   >
-    {/***************************************
-      ⯆⯆⯆ STEVE LOOK RIGHT BELOW HERE ⯆⯆⯆
-      ***************************************/}
-    {/* props.fillBox(props.center) */}
-    {/***************************************
-      ⯅⯅⯅ STEVE LOOK RIGHT ABOVE HERE ⯅⯅⯅
-      ***************************************/}
-
     <SearchBox
       ref={props.onSearchBoxMounted}
       bounds={props.bounds}
