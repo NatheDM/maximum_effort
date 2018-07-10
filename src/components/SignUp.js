@@ -57,6 +57,17 @@ const SignUp = ({ addProfile, history, interests, toggle }) => {
       history.push("/area");
 
       toggle();
+
+      nameLast.value = "";
+      nameUser.value = "";
+      dateBirth.value = "";
+      homeCity.value = "";
+      homeState.value = "";
+      homeZip.value = "";
+      email.value = "";
+      password.value = "";
+      confirmPassword.value = "";
+      interest.value = "";
     } else {
       alert("Passwords must match.");
     }
@@ -65,6 +76,17 @@ const SignUp = ({ addProfile, history, interests, toggle }) => {
   let kill = event => {
     event.preventDefault();
     toggle();
+
+    nameLast.value = "";
+    nameUser.value = "";
+    dateBirth.value = "";
+    homeCity.value = "";
+    homeState.value = "";
+    homeZip.value = "";
+    email.value = "";
+    password.value = "";
+    confirmPassword.value = "";
+    interest.value = "";
   };
 
   return (

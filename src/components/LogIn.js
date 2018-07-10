@@ -22,8 +22,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const LogIn = ({ loadProfile, history, toggle }) => {
-  let nameUser;
-  let password;
+  let nameUser, password;
 
   let submitForm = event => {
     event.preventDefault();
@@ -36,11 +35,17 @@ const LogIn = ({ loadProfile, history, toggle }) => {
     history.push("/area");
 
     toggle();
+
+    nameUser.value = "";
+    password.value = "";
   };
 
   let kill = event => {
     event.preventDefault();
     toggle();
+
+    nameUser.value = "";
+    password.value = "";
   };
 
   return (

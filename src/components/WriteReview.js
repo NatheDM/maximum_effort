@@ -37,11 +37,27 @@ const WriteReview = ({ addReview, history, interests, toggle }) => {
     });
 
     toggle();
+
+    nameUser.value = "";
+    nameLocation.value = "";
+    locCity.value = "";
+    locState.value = "";
+    locStreet.value = "";
+    locZip.value = "";
+    reviewBody.value = "";
   };
 
   let kill = event => {
     event.preventDefault();
     toggle();
+
+    nameUser.value = "";
+    nameLocation.value = "";
+    locCity.value = "";
+    locState.value = "";
+    locStreet.value = "";
+    locZip.value = "";
+    reviewBody.value = "";
   };
 
   return (
