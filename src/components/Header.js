@@ -11,23 +11,23 @@ const Header = props => {
       <Navbar.Header>
         <Navbar.Brand>
           <a href="/" style={{ display: "flex" }}>
-            Maximum_Effort
+            Tra-Local
           </a>
         </Navbar.Brand>
       </Navbar.Header>
       <Nav pullRight className="navModal">
         <li className="navModal">
-          <Modal className="modal" name="About">
+          <Modal className="autoModal" name="About">
             <About />
           </Modal>
         </li>
         <li className="navModal">
-          <Modal className="modal" name="Sign up">
+          <Modal className="autoModal" name="Sign up">
             <SignUp />
           </Modal>
         </li>
         <li className="navModal">
-          <Modal className="modal" name="Log in">
+          <Modal className="autoModal" name="Log in">
             <LogIn />
           </Modal>
         </li>

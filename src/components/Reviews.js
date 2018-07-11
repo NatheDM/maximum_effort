@@ -18,16 +18,9 @@ const Reviews = ({ history, reviews, mapCenter }) => {
   let lngMax = parseFloat(myCenter.lng - -0.125);
 
   return (
-    <Jumbotron
-      style={{
-        position: "relative",
-        right: "400px",
-        width: "790px"
-      }}
-    >
-      <Col smOffset={2} sm={6}>
-        <h3>Local Reviews.</h3>
-      </Col>
+    <div>
+      <h3>Local Reviews.</h3>
+
       <Grid>
         {!reviews.length && <h3>no reviews found</h3>}
         {reviews.map(rvw => {
@@ -36,18 +29,20 @@ const Reviews = ({ history, reviews, mapCenter }) => {
               if (lngMin <= rvw.center.lng) {
                 if (rvw.center.lng <= lngMax) {
                   return (
-                    <Col sm={4} key={rvw._id}>
+                    <Col
+                      sm={12}
+                      key={rvw._id}
+                      style={{
+                        backgroundImage: `url("../images/eyeCat.jpg")`
+                      }}
+                    >
                       <Panel>
-                        <Panel.Heading>
+                        <Panel.Title>
                           <Modal className="modal" name={rvw.nameLocation}>
                             <Review id={rvw._id} />
                           </Modal>
-                        </Panel.Heading>
-                        <Panel.Body>
-                          Location: {rvw.nameLocation}
-                          <br />
-                          Zip: {rvw.locZip}
-                        </Panel.Body>
+                        </Panel.Title>
+                        <Panel.Body />
                       </Panel>
                     </Col>
                   );
@@ -57,7 +52,7 @@ const Reviews = ({ history, reviews, mapCenter }) => {
           }
         })}
       </Grid>
-    </Jumbotron>
+    </div>
   );
 };
 

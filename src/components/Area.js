@@ -1,5 +1,5 @@
 import React from "react";
-import { Jumbotron, Grid, Col, Button } from "react-bootstrap";
+import { Jumbotron, Grid, Col, Button, Panel } from "react-bootstrap";
 import MapWithASearchBox from "./Maps.js";
 import Modal from "./Modal.js";
 import Reviews from "./Reviews.js";
@@ -14,39 +14,38 @@ const Area = props => {
   return (
     <Jumbotron>
       <Grid>
-        <Col smOffset={2} sm={6}>
-          <h3>Area map.</h3>
-          <Reviews />
-
-          <MapWithASearchBox />
-        </Col>
-
-        <Col smOffset={-2} sm={6}>
-          <Button
-            style={{
-              position: "relative",
-              right: "-678px",
-              top: "-230px"
-            }}
-            type="submit"
-            onClick={event => goPro(event)}
-          >
-            Profile List
-          </Button>
-        </Col>
-        <Col smOffset={2} sm={-10}>
+        <Col smOffset={1} sm={10}>
           <Modal
             className="modal"
             name="Write a review"
             style={{
-              position: "relative",
-              right: "68px",
-              top: "530px"
+              display: "inline-block",
+              margin: "0"
             }}
           >
             <WriteReview />
           </Modal>
+          <Button type="submit" class="butts" onClick={event => goPro(event)}>
+            Profile List
+          </Button>
+          <h3>Area map. </h3>
         </Col>
+
+        <Col smOffset={1} sm={6}>
+          <MapWithASearchBox />
+          <br />
+        </Col>
+
+        <Col smOffset={1} sm={10} className="workdamn">
+          <hr />
+          <Reviews
+            style={{
+              position: "relative"
+            }}
+          />
+        </Col>
+
+        <Col smOffset={2} sm={6} />
       </Grid>
     </Jumbotron>
   );

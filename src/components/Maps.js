@@ -35,15 +35,16 @@ const MapWithASearchBox = compose(
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: (
       <div
+        class="maps"
         style={{
-          height: `400px`,
+          height: "400px",
+          width: "450px",
           position: "relative",
-          right: "-450px",
-          bottom: "-30px",
-          position: "absolute",
-          left: "500px",
-          top: "60px",
-          zindex: "5"
+          right: "-35%",
+
+          left: "0%",
+          top: "50px",
+          zindex: "20"
         }}
       />
     ),

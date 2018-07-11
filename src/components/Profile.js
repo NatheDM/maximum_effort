@@ -8,37 +8,33 @@ const mapStateToProps = state => ({
 
 const Profile = ({ history, profiles, match, toggle, id }) => {
   let myProfo = profiles.filter(prfl => prfl._id === id)[0];
-  let closeModal = event => {
-    event.preventDefault();
 
+  let kill = theThing => {
+    theThing.preventDefault();
     toggle();
   };
 
   return (
-    <Jumbotron>
+    <Form horizontal>
       {myProfo && (
-        <Grid>
-          <Form horizontal>
-            <FormGroup>
-              <Col smOffset={2} sm={6}>
-                <div>
-                  UserName: {myProfo.nameUser}
-                  <br />
-                  Email: <a href={`mailto:${myProfo.email}`}>{myProfo.email}</a>
-                  <br />
-                  Interests: {myProfo.interest}{" "}
-                </div>
-              </Col>
-              <Col smOffset={2} sm={6}>
-                <Button type="submit" onClick={event => closeModal(event)}>
-                  Close
-                </Button>
-              </Col>
-            </FormGroup>
-          </Form>
-        </Grid>
+        <div>
+          <Col smOffset={11}>
+            <button onClick={theThing => kill(theThing)}>&times;</button>
+          </Col>
+          <FormGroup>
+            <Col smOffset={2} sm={6}>
+              <div>
+                UserName: {myProfo.nameUser}
+                <br />
+                Email: <a href={`mailto:${myProfo.email}`}>{myProfo.email}</a>
+                <br />
+                Interests: {myProfo.interest}{" "}
+              </div>
+            </Col>
+          </FormGroup>
+        </div>
       )}
-    </Jumbotron>
+    </Form>
   );
 };
 

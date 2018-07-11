@@ -49,52 +49,50 @@ const LogIn = ({ loadProfile, history, toggle }) => {
   };
 
   return (
-    <Jumbotron>
-      <Grid>
-        <Form horizontal onSubmit={event => submitForm(event)}>
-          <FormGroup>
-            <Col smOffset={2} sm={6}>
-              <h3>Log in.</h3>
-            </Col>
-          </FormGroup>
+    <Form horizontal onSubmit={event => submitForm(event)}>
+      <Col smOffset={11}>
+        <button onClick={theThing => kill(theThing)}>&times;</button>
+      </Col>
+      <FormGroup>
+        <Col smOffset={1} sm={6}>
+          <h3>Log in.</h3>
+        </Col>
+      </FormGroup>
 
-          <FormGroup>
-            <Col sm={2} componentClass={ControlLabel}>
-              User name:
-            </Col>
-            <Col sm={6}>
-              <FormControl
-                type="text"
-                required
-                inputRef={ref => {
-                  nameUser = ref;
-                }}
-              />
-            </Col>
-          </FormGroup>
+      <FormGroup>
+        <Col sm={2} componentClass={ControlLabel} />
 
-          <FormGroup>
-            <Col sm={2} componentClass={ControlLabel}>
-              Password:
-            </Col>
-            <Col sm={6}>
-              <FormControl
-                type="text"
-                required
-                inputRef={ref => {
-                  password = ref;
-                }}
-              />
-            </Col>
-          </FormGroup>
+        <Col sm={8}>
+          <FormControl
+            placeholder="User name"
+            type="text"
+            required
+            inputRef={ref => {
+              nameUser = ref;
+            }}
+          />
+        </Col>
+      </FormGroup>
 
-          <Col smOffset={2} sm={6}>
-            <Button type="submit">Submit</Button>
-            <Button onClick={theThing => kill(theThing)}>Close</Button>
-          </Col>
-        </Form>
-      </Grid>
-    </Jumbotron>
+      <FormGroup>
+        <Col sm={2} componentClass={ControlLabel} />
+
+        <Col sm={8}>
+          <FormControl
+            placeholder="Password"
+            type="text"
+            required
+            inputRef={ref => {
+              password = ref;
+            }}
+          />
+        </Col>
+      </FormGroup>
+
+      <Col smOffset={2} sm={6}>
+        <Button type="submit">Submit</Button>
+      </Col>
+    </Form>
   );
 };
 

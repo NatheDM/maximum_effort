@@ -4,15 +4,21 @@ import { Jumbotron, Grid, Well } from "react-bootstrap";
 const Home = props => (
   <Jumbotron>
     <Grid>
-      <h1>Welcome to Maximum_Effort!</h1>
+      <h2>Welcome to Tra-Local!</h2>
+      <br />
       <Well>
-        <ul>
-          <li>Traveling somewhere and want the inside scoop on locales?</li>
-          <li>Know a particularly good location in your area?</li>
-          <li>Want to meet up with a group for an event?</li>
-        </ul>
+        <h4>
+          <ul>
+            <li>Traveling, and want to know places the locals avoid?</li>
+            <li>Know a particularly horrible location in your area?</li>
+            <li>Want to meet up with a group for an event?</li>
+          </ul>
+          <div className="workdamn">Tra-Local is here for your needs!</div>
+        </h4>
       </Well>
-      <p>Maximum_Effort is here for your needs!</p>
+      <div className="workdamn">
+        <br />"Prowl the World"
+      </div>
     </Grid>
   </Jumbotron>
 );

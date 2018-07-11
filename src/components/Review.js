@@ -9,35 +9,28 @@ const mapStateToProps = state => ({
 const Review = ({ history, reviews, match, toggle, id }) => {
   let myRevo = reviews.filter(rvw => rvw._id === id)[0];
 
-  let closeModal = event => {
-    event.preventDefault();
+  let kill = theThing => {
+    theThing.preventDefault();
     toggle();
   };
 
   return (
-    <Jumbotron>
+    <Form horizontal>
       {myRevo && (
-        <Grid>
-          <Form horizontal>
-            <Panel>
-              <Panel.Heading>
-                <Panel.Title>
-                  {myRevo.nameLocation}, {myRevo.locStreet}, {myRevo.locCity},{" "}
-                  {myRevo.locState} {myRevo.locZip}{" "}
-                </Panel.Title>
-              </Panel.Heading>
+        <div>
+          <Col smOffset={11}>
+            <button onClick={theThing => kill(theThing)}>&times;</button>
+          </Col>
 
-              <Panel.Body>{myRevo.reviewBody}</Panel.Body>
-            </Panel>
-            <Col smOffset={2} sm={6}>
-              <Button type="submit" onClick={event => closeModal(event)}>
-                Close
-              </Button>
-            </Col>
-          </Form>
-        </Grid>
+          <h2>
+            {myRevo.nameLocation}, {myRevo.locStreet}, {myRevo.locCity},{" "}
+            {myRevo.locState} {myRevo.locZip}{" "}
+          </h2>
+
+          <h3>{myRevo.reviewBody}</h3>
+        </div>
       )}
-    </Jumbotron>
+    </Form>
   );
 };
 

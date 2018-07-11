@@ -18,30 +18,31 @@ const Profiles = ({ history, profiles }) => {
     <Jumbotron>
       <Grid>
         {!profiles.length && <h3>no profiles found</h3>}
+        <Col smOffset={1} sm={10}>
+          <Button type="submit" onClick={event => goHome(event)}>
+            Area Map
+          </Button>
+          <h3>Profile list.</h3>
+        </Col>
         {profiles.map(prfl => (
           <Col sm={4} key={prfl._id}>
             <Panel>
               <Panel.Heading>
-                <Modal className="modal" name={prfl.nameUser}>
-                  <Profile id={prfl._id} />
-                </Modal>
+                <Panel.Title>
+                  <Modal className="modal" name={prfl.nameUser}>
+                    <Profile id={prfl._id} />
+                  </Modal>
+                  <br />
+                </Panel.Title>
               </Panel.Heading>
+
               <Panel.Body>
-                ID: {prfl._id}
-                <br />
-                City: {prfl.homeCity}
-                <br />
-                State: {prfl.homeState}
+                Local to:<br />
+                {prfl.homeCity}, {prfl.homeState}
               </Panel.Body>
             </Panel>
           </Col>
         ))}
-        <Col smOffset={2} sm={6}>
-          <Button type="submit" onClick={event => goHome(event)}>
-            Area Map
-          </Button>
-        </Col>
-        <Col smOffset={2} sm={6} />
       </Grid>
     </Jumbotron>
   );
