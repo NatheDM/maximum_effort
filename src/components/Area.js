@@ -15,23 +15,23 @@ const Area = props => {
     <Jumbotron>
       <Grid>
         <Col smOffset={1} sm={10}>
-          <Modal
-            className="modal"
-            name="Write a review"
-            style={{
-              display: "inline-block",
-              margin: "0"
-            }}
-          >
-            <WriteReview />
-          </Modal>
-          <Button type="submit" class="butts" onClick={event => goPro(event)}>
-            Profile List
+          <Button>
+            <Modal
+              className="modal"
+              name="Write a review"
+              style={{
+                display: "inline-block",
+                margin: "0"
+              }}
+            >
+              <WriteReview />
+            </Modal>
           </Button>
+          <Button onClick={event => goPro(event)}>Profile List</Button>
           <h3>Area map. </h3>
         </Col>
 
-        <Col smOffset={1} sm={6}>
+        <Col smOffset={1} sm={10}>
           <MapWithASearchBox />
           <br />
         </Col>

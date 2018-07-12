@@ -1,6 +1,6 @@
 import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
-import Modal from "./Modal.js";
+import { Navbar, Nav, Button } from "react-bootstrap";
+import NavModal from "./HeaderModal";
 import SignUp from "./SignUp.js";
 import About from "./About.js";
 import LogIn from "./LogIn.js";
@@ -17,19 +17,19 @@ const Header = props => {
       </Navbar.Header>
       <Nav pullRight className="navModal">
         <li className="navModal">
-          <Modal className="autoModal" name="About">
+          <NavModal name="About">
             <About />
-          </Modal>
+          </NavModal>
         </li>
         <li className="navModal">
-          <Modal className="autoModal" name="Sign up">
+          <NavModal className="autoModal" name="Sign up">
             <SignUp />
-          </Modal>
+          </NavModal>
         </li>
         <li className="navModal">
-          <Modal className="autoModal" name="Log in">
+          <NavModal className="autoModal" name="Log in">
             <LogIn />
-          </Modal>
+          </NavModal>
         </li>
       </Nav>
     </Navbar>

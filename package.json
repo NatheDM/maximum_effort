@@ -13,6 +13,7 @@
     "react-bootstrap": "^0.32.1",
     "react-dom": "^15.6.1",
     "react-google-maps": "^9.4.5",
+    "react-images-upload": "^1.2.0",
     "react-js-google-maps": "^1.5.2",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",

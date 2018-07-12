@@ -7,7 +7,7 @@ const hide = {
   display: "none"
 };
 
-class Modal extends React.Component {
+class NavModal extends React.Component {
   constructor(props) {
     super(props);
 
@@ -34,11 +34,13 @@ class Modal extends React.Component {
     );
     return (
       <div>
-        <div onClick={this.toggle}>{this.props.name}</div>
+        <div className="btn" onClick={this.toggle}>
+          {this.props.name}
+        </div>
         {modal}
       </div>
     );
   }
 }
 
-export default Modal;
+export default NavModal;

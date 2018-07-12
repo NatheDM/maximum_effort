@@ -38,7 +38,7 @@ const MapWithASearchBox = compose(
         class="maps"
         style={{
           height: "400px",
-          width: "450px",
+          width: "100%",
           position: "relative",
           right: "-35%",
 

@@ -58,6 +58,7 @@ const SignUp = ({ addProfile, history, interests, toggle }) => {
 
       toggle();
 
+      nameFirst.value = "";
       nameLast.value = "";
       nameUser.value = "";
       dateBirth.value = "";
@@ -77,6 +78,7 @@ const SignUp = ({ addProfile, history, interests, toggle }) => {
     event.preventDefault();
     toggle();
 
+    nameFirst.value = "";
     nameLast.value = "";
     nameUser.value = "";
     dateBirth.value = "";

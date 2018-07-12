@@ -22,6 +22,11 @@
   margin: auto;
 }
 
+.navButt {
+  background: rgb(0, 0, 0, 0) !important;
+  color: whitesmoke !important;
+}
+
 .panel svg {
   vertical-align: middle;
   margin: 4px;
@@ -87,6 +92,10 @@ h2 {
 .butts {
   display: inline-block !important;
   margin: 0;
+}
+
+.tubbs {
+  background: rgba(255, 0, 0) !important;
 }
 
 .workdamn {
