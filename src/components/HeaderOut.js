@@ -1,16 +1,22 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
+import { connect } from "react-redux";
 import NavModal from "./modals/HeaderModal";
 import SignUp from "./SignUp.js";
 import About from "./About.js";
 import LogIn from "./LogIn.js";
 
-const Header = props => {
+const mapStateToProps = state => ({
+  authen: state.authen
+});
+
+const HeaderOut = props => {
   return (
     <Navbar inverse fluid>
+      console.log(props.authen)
       <Navbar.Header>
         <Navbar.Brand>
-          <a href="/" style={{ display: "flex" }}>
+          <a href="/home" style={{ display: "flex" }}>
             Tra-Local
           </a>
         </Navbar.Brand>
@@ -36,4 +42,4 @@ const Header = props => {
   );
 };
 
-export default Header;
+export default connect(mapStateToProps)(HeaderOut);

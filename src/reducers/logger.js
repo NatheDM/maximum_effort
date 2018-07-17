@@ -1,10 +1,10 @@
-var logObj = {
-  loggedIn: false,
-  userID: 0
+const authen = (state = {}, action) => {
+  switch (action.type) {
+    case "STORE_TOKEN":
+      return action;
+    default:
+      return state;
+  }
 };
 
-var logger = (state = logObj, action) => {
-  return state;
-};
-
-export default logger;
+export default authen;

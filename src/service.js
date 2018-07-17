@@ -24,10 +24,7 @@ const profiles = {
     requests.post(`/auth/login`, payload).then(responseData => {
       if (responseData) {
         logg = true;
-        console.log(logg);
-      } else {
-        logg = false;
-        console.log(logg);
+        //console.log(logg);
       }
 
       return logg;

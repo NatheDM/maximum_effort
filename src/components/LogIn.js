@@ -8,35 +8,53 @@ import {
   // Radio,
   Button
 } from "react-bootstrap";
+import services from "../service";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 const mapDispatchToProps = dispatch => ({
-  logIn: acct =>
+  storeToken: tkn =>
     dispatch({
-      type: "LOGIN_PROFILE",
-      payload: acct
+      type: "STORE_TOKEN",
+      payload: tkn
     })
 });
 
-const LogIn = ({ logIn, history, toggle }) => {
+const LogIn = ({ storeToken, history, toggle }) => {
   let nameUser, password;
 
+  //-------------------------------
   let submitForm = event => {
     event.preventDefault();
+    let authen = false;
 
-    logIn({
+    let prfl = {
       nameUser: nameUser.value,
       password: password.value
-    });
+    };
+    services.profiles
+      .auth(prfl)
+      .then(token => {
+        if (token) {
+          authen = true;
+          history.push("/area");
+          storeToken(authen);
+        }
+      })
+      .catch(err => {
+        history.push("/home");
+        alert("Invalid user name or password.");
+      });
 
-    history.push("/area");
+    storeToken(authen);
 
     toggle();
 
     nameUser.value = "";
     password.value = "";
+    return authen;
   };
+  //-------------------------------
 
   let kill = event => {
     event.preventDefault();
@@ -47,7 +65,13 @@ const LogIn = ({ logIn, history, toggle }) => {
   };
 
   return (
-    <Form horizontal onSubmit={event => submitForm(event)}>
+    <Form
+      horizontal
+      onSubmit={
+        event => submitForm(event)
+        //.catch(err => console.log("Error: ", err))
+      }
+    >
       <Col smOffset={11}>
         <button onClick={theThing => kill(theThing)}>&times;</button>
       </Col>
@@ -78,7 +102,7 @@ const LogIn = ({ logIn, history, toggle }) => {
         <Col sm={8}>
           <FormControl
             placeholder="Password"
-            type="text"
+            type="password"
             required
             inputRef={ref => {
               password = ref;

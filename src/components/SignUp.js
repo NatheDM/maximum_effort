@@ -52,7 +52,7 @@ const SignUp = ({ addProfile, history, interests, toggle }) => {
         interest: interest.value
       });
 
-      history.push("/");
+      history.push("/home");
 
       toggle();
 

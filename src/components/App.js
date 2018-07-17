@@ -2,7 +2,8 @@
 import React from "react";
 import { Route, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import Header from "./Header.js";
+import HeaderIn from "./HeaderIn.js";
+import HeaderOut from "./HeaderOut.js";
 import Home from "./Home.js";
 import Profiles from "./ProfileList.js";
 import Area from "./Area.js";
@@ -11,6 +12,10 @@ import "./app.css";
 /****** </INITIAL IMPORT STATEMENTS> ******/
 
 /****** <CONSTANTS /> ******/
+const mapStateToProps = state => ({
+  authen: state.authen
+});
+
 const mapDispatchToProps = dispatch => ({
   profoOnLoad: payload =>
     dispatch({
@@ -26,17 +31,20 @@ const mapDispatchToProps = dispatch => ({
 });
 
 /****** <ROUTING THE PAGES /> ******/
-const App = ({ profoOnLoad, revoOnLoad }) => {
+const App = ({ profoOnLoad, revoOnLoad, authen }) => {
   services.profiles.all().then(prfl => profoOnLoad(prfl));
   services.reviews.all().then(prfl => revoOnLoad(prfl));
 
+  let isLoggedIn = authen.payload;
+  console.log("Is logged in: " + isLoggedIn);
+
   return (
     <div className="page">
-      <Header />
+      {/* <HeaderOut /> */}
       <div className="content">
-        <Route exact path="/" component={Home} />
+        <Route exact path="/home" component={Home} />
         <Route exact path="/profiles" component={Profiles} />
-        <Route path="/area" component={Area} />
+        <Route exact path="/area" component={Area} />
       </div>
     </div>
   );
@@ -44,7 +52,7 @@ const App = ({ profoOnLoad, revoOnLoad }) => {
 
 export default withRouter(
   connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
   )(App)
 );
