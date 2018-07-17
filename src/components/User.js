@@ -1,5 +1,7 @@
 import React from "react";
 import {
+  Jumbotron,
+  Grid,
   Form,
   FormGroup,
   Col,
@@ -23,49 +25,30 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const SignUp = ({ addProfile, history, interests, toggle }) => {
-  let nameUser,
-    nameFirst,
-    nameLast,
-    dateBirth,
-    homeCity,
-    homeState,
-    homeZip,
-    email,
-    password,
-    confirmPassword,
-    interest;
+  let nameFirst, nameLast, homeCity, homeState, homeZip, interest;
 
   let submitForm = event => {
     event.preventDefault();
 
     if (password.value === confirmPassword.value) {
       addProfile({
-        nameUser: nameUser.value,
         nameFirst: nameFirst.value,
         nameLast: nameLast.value,
-        dateBirth: dateBirth.value,
         homeCity: homeCity.value,
         homeState: homeState.value,
         homeZip: homeZip.value,
-        email: email.value,
-        password: password.value,
         interest: interest.value
       });
 
-      history.push("/");
+      history.push("/area");
 
       toggle();
 
-      nameUser.value = "";
       nameFirst.value = "";
       nameLast.value = "";
-      dateBirth.value = "";
       homeCity.value = "";
       homeState.value = "";
       homeZip.value = "";
-      email.value = "";
-      password.value = "";
-      confirmPassword.value = "";
       interest.value = "";
     } else {
       alert("Passwords must match.");
@@ -76,16 +59,11 @@ const SignUp = ({ addProfile, history, interests, toggle }) => {
     event.preventDefault();
     toggle();
 
-    nameUser.value = "";
     nameFirst.value = "";
     nameLast.value = "";
-    dateBirth.value = "";
     homeCity.value = "";
     homeState.value = "";
     homeZip.value = "";
-    email.value = "";
-    password.value = "";
-    confirmPassword.value = "";
     interest.value = "";
   };
 
@@ -97,20 +75,6 @@ const SignUp = ({ addProfile, history, interests, toggle }) => {
       <FormGroup>
         <Col smOffset={1} sm={6}>
           <h3>Create an account.</h3>
-        </Col>
-      </FormGroup>
-
-      <FormGroup>
-        <Col sm={2} componentClass={ControlLabel} />
-        <Col sm={8}>
-          <FormControl
-            placeholder="User name"
-            type="text"
-            required
-            inputRef={ref => {
-              nameUser = ref;
-            }}
-          />
         </Col>
       </FormGroup>
 
@@ -137,20 +101,6 @@ const SignUp = ({ addProfile, history, interests, toggle }) => {
             required
             inputRef={ref => {
               nameLast = ref;
-            }}
-          />
-        </Col>
-      </FormGroup>
-
-      <FormGroup>
-        <Col sm={2} componentClass={ControlLabel} />
-        <Col sm={8}>
-          <FormControl
-            placeholder="Birth datte"
-            type="date"
-            required
-            inputRef={ref => {
-              dateBirth = ref;
             }}
           />
         </Col>
@@ -193,48 +143,6 @@ const SignUp = ({ addProfile, history, interests, toggle }) => {
             required
             inputRef={ref => {
               homeZip = ref;
-            }}
-          />
-        </Col>
-      </FormGroup>
-
-      <FormGroup>
-        <Col sm={2} componentClass={ControlLabel} />
-        <Col sm={8}>
-          <FormControl
-            placeholder="E-mail"
-            type="email"
-            required
-            inputRef={ref => {
-              email = ref;
-            }}
-          />
-        </Col>
-      </FormGroup>
-
-      <FormGroup>
-        <Col sm={2} componentClass={ControlLabel} />
-        <Col sm={8}>
-          <FormControl
-            placeholder="Password"
-            type="password"
-            required
-            inputRef={ref => {
-              password = ref;
-            }}
-          />
-        </Col>
-      </FormGroup>
-
-      <FormGroup>
-        <Col sm={2} componentClass={ControlLabel} />
-        <Col sm={8}>
-          <FormControl
-            placeholder="Confirm password"
-            type="password"
-            required
-            inputRef={ref => {
-              confirmPassword = ref;
             }}
           />
         </Col>

@@ -1,8 +1,8 @@
 import React from "react";
-import { Jumbotron, Grid, Col, Panel } from "react-bootstrap";
+import { Grid, Col, Panel } from "react-bootstrap";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import Modal from "./Modal.js";
+import Modal from "./modals/Modal.js";
 import Review from "./Review.js";
 
 const mapStateToProps = state => ({

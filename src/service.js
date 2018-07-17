@@ -1,4 +1,7 @@
 import axios from "axios";
+import logger from "./reducers/logger.js";
+
+var logg = logger.loggedIn;
 
 //const API_ROOT = "https://maximum-effort-server.herokuapp.com/api";
 const API_ROOT = "http://localhost:8080/api";
@@ -16,7 +19,19 @@ const profiles = {
   all: page => requests.get(`/profiles`),
   add: payload => requests.post(`/profiles`, payload),
   delete: id => requests.delete(`/profiles/${id}`),
-  one: id => requests.get(`/profiles/${id}`)
+  one: id => requests.get(`/profiles/${id}`),
+  auth: payload =>
+    requests.post(`/auth/login`, payload).then(responseData => {
+      if (responseData) {
+        logg = true;
+        console.log(logg);
+      } else {
+        logg = false;
+        console.log(logg);
+      }
+
+      return logg;
+    })
 };
 
 const reviews = {

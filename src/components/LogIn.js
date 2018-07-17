@@ -1,7 +1,5 @@
 import React from "react";
 import {
-  Jumbotron,
-  Grid,
   Form,
   FormGroup,
   Col,
@@ -14,20 +12,20 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 const mapDispatchToProps = dispatch => ({
-  loadProfile: prfl =>
+  logIn: acct =>
     dispatch({
-      type: "LOAD_PROFILE",
-      payload: prfl
+      type: "LOGIN_PROFILE",
+      payload: acct
     })
 });
 
-const LogIn = ({ loadProfile, history, toggle }) => {
+const LogIn = ({ logIn, history, toggle }) => {
   let nameUser, password;
 
   let submitForm = event => {
     event.preventDefault();
 
-    loadProfile({
+    logIn({
       nameUser: nameUser.value,
       password: password.value
     });

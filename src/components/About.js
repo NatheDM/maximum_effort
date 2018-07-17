@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Jumbotron,
-  Grid,
-  Form,
-  FormGroup,
-  Col,
-  Button,
-  Glyphicon
-} from "react-bootstrap";
+import { Col } from "react-bootstrap";
 
 const About = props => {
   let kill = event => {

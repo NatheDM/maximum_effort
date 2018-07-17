@@ -1,7 +1,7 @@
 import React from "react";
-import { Jumbotron, Grid, Col, Button, Panel } from "react-bootstrap";
+import { Jumbotron, Grid, Col, Button } from "react-bootstrap";
 import MapWithASearchBox from "./Maps.js";
-import Modal from "./Modal.js";
+import Modal from "./modals/Modal.js";
 import Reviews from "./Reviews.js";
 import WriteReview from "./WriteReview.js";
 

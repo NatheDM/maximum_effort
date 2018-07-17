@@ -7,7 +7,7 @@ import {
 } from "react-google-maps";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { componentDidUpdate } from "react-google-maps/lib/utils/MapChildHelper";
+//import { componentDidUpdate } from "react-google-maps/lib/utils/MapChildHelper";
 
 const mapDispatchToProps = dispatch => ({
   fillBox: stuff =>
@@ -25,8 +25,6 @@ const { compose, withProps, lifecycle } = require("recompose");
 const {
   SearchBox
 } = require("react-google-maps/lib/components/places/SearchBox");
-
-let myRefs;
 
 const MapWithASearchBox = compose(
   withProps({

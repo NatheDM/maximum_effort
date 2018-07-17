@@ -1,6 +1,6 @@
 import React from "react";
-import { Navbar, Nav, Button } from "react-bootstrap";
-import NavModal from "./HeaderModal";
+import { Navbar, Nav } from "react-bootstrap";
+import NavModal from "./modals/HeaderModal";
 import SignUp from "./SignUp.js";
 import About from "./About.js";
 import LogIn from "./LogIn.js";

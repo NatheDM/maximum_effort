@@ -19,6 +19,9 @@ const profiles = (state = [], action) => {
     case "REMOVE_PROFILE":
       services.profiles.delete(action.payload);
       return [...state.filter(prfl => prfl._id !== action.payload)];
+    case "LOGIN_PROFILE":
+      services.profiles.auth({ ...action.payload });
+      return state;
     default:
       return state;
   }

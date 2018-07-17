@@ -1,7 +1,7 @@
 import React from "react";
 import { Jumbotron, Grid, Col, Button, Panel } from "react-bootstrap";
 import { connect } from "react-redux";
-import Modal from "./Modal.js";
+import Modal from "./modals/Modal.js";
 import Profile from "./Profile.js";
 
 const mapStateToProps = state => ({
@@ -29,7 +29,7 @@ const Profiles = ({ history, profiles }) => {
             <Panel>
               <Panel.Heading>
                 <Panel.Title>
-                  <Modal className="modal" name={prfl.nameUser}>
+                  <Modal styler="modal" name={prfl.nameUser}>
                     <Profile id={prfl._id} />
                   </Modal>
                   <br />
@@ -37,7 +37,6 @@ const Profiles = ({ history, profiles }) => {
               </Panel.Heading>
 
               <Panel.Body>
-                Local to:<br />
                 {prfl.homeCity}, {prfl.homeState}
               </Panel.Body>
             </Panel>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Jumbotron, Grid, Col, Panel, Form, Button } from "react-bootstrap";
+import { Col, Form } from "react-bootstrap";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => ({
