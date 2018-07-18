@@ -19,7 +19,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const WriteReview = ({ addReview, history, interests, toggle }) => {
-  let nameUser, nameLocation, locCity, locState, locStreet, locZip, reviewBody;
+  let nameLocation, locCity, locState, locStreet, locZip, reviewBody;
 
   let submitForm = event => {
     event.preventDefault();
@@ -33,8 +33,8 @@ const WriteReview = ({ addReview, history, interests, toggle }) => {
       locZip: locZip.value,
       reviewBody: reviewBody.value,
       center: {
-        lat: "33.557732",
-        lng: "111.88928499999997"
+        lat: 33.557732,
+        lng: -111.88928499999997
       }
     });
 
