@@ -96,7 +96,7 @@ const SignUp = ({ addProfile, history, interests, toggle }) => {
       </Col>
       <FormGroup>
         <Col smOffset={1} sm={6}>
-          <h3>Create an account.</h3>
+          <h3 className="abouthead">Create an account.</h3>
         </Col>
       </FormGroup>
 

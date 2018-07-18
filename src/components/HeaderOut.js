@@ -13,7 +13,6 @@ const mapStateToProps = state => ({
 const HeaderOut = props => {
   return (
     <Navbar inverse fluid>
-      console.log(props.authen)
       <Navbar.Header>
         <Navbar.Brand>
           <a href="/home" style={{ display: "flex" }}>

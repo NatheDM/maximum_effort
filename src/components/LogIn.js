@@ -77,7 +77,7 @@ const LogIn = ({ storeToken, history, toggle }) => {
       </Col>
       <FormGroup>
         <Col smOffset={1} sm={6}>
-          <h3>Log in.</h3>
+          <h3 className="abouthead">Log in.</h3>
         </Col>
       </FormGroup>
 

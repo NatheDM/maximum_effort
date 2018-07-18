@@ -25,18 +25,22 @@ const WriteReview = ({ addReview, history, interests, toggle }) => {
     event.preventDefault();
 
     addReview({
-      nameUser: nameUser.value,
+      nameUser: "MaxE3",
       nameLocation: nameLocation.value,
       locCity: locCity.value,
       locState: locState.value,
       locStreet: locStreet.value,
       locZip: locZip.value,
-      reviewBody: reviewBody.value
+      reviewBody: reviewBody.value,
+      center: {
+        lat: "33.557732",
+        lng: "111.88928499999997"
+      }
     });
 
     toggle();
 
-    nameUser.value = "";
+    //nameUser.value = "";
     nameLocation.value = "";
     locCity.value = "";
     locState.value = "";
@@ -49,7 +53,7 @@ const WriteReview = ({ addReview, history, interests, toggle }) => {
     event.preventDefault();
     toggle();
 
-    nameUser.value = "";
+    //nameUser.value = "";
     nameLocation.value = "";
     locCity.value = "";
     locState.value = "";
@@ -65,11 +69,11 @@ const WriteReview = ({ addReview, history, interests, toggle }) => {
       </Col>
       <FormGroup>
         <Col smOffset={2} sm={6}>
-          <h3>Write a review.</h3>
+          <h3 className="abouthead">Write a review.</h3>
         </Col>
       </FormGroup>
 
-      <FormGroup>
+      {/* <FormGroup>
         <Col sm={2} componentClass={ControlLabel} />
         <Col sm={8}>
           <FormControl
@@ -81,7 +85,7 @@ const WriteReview = ({ addReview, history, interests, toggle }) => {
             }}
           />
         </Col>
-      </FormGroup>
+      </FormGroup> */}
 
       <FormGroup>
         <Col sm={2} componentClass={ControlLabel} />

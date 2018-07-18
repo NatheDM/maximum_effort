@@ -7,16 +7,20 @@ const Home = props => (
     <HeaderOut />
     <Jumbotron>
       <Grid>
-        <h2>Welcome to Tra-Local!</h2>
+        <h2 className="abouthead">Welcome to Tra-Local!</h2>
         <br />
         <Well>
-          <h4>
+          <h4 id="about">
             <ul>
-              <li>Traveling, and want to know places the locals avoid?</li>
-              <li>Know a particularly horrible location in your area?</li>
-              <li>Want to meet up with a group for an event?</li>
+              <li id="list">
+                Traveling, and want to know places the locals avoid?
+              </li>
+              <li id="list">
+                Know a particularly horrible location in your area?
+              </li>
+              <li id="list">Want to meet up with a group for an event?</li>
             </ul>
-            <div className="workdamn">Tra-Local is here for your needs!</div>
+            <div className="workdamn1">Tra-Local is here for your needs!</div>
           </h4>
         </Well>
         <div className="workdamn">

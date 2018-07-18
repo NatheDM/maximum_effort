@@ -13,10 +13,10 @@ const About = props => {
         <button onClick={theThing => kill(theThing)}>&times;</button>
       </Col>
       <Col smOffset={1} sm={6}>
-        <h3>About page.</h3>
+        <h3 className="abouthead">About page.</h3>
       </Col>
       <Col smOffset={2} sm={8}>
-        <div>
+        <div id="about">
           <br />
           Tra-Local is a webapp that aims to provide pertinent information about
           locales to inform user of what places to avoid, so as to enhance their
@@ -25,9 +25,9 @@ const About = props => {
           <br />
           Tra-Local is designed by Maximum_Effort. Maximum_Effort is:
           <ul>
-            <li>Jonathan Moss</li>
-            <li>Steve Olson</li>
-            <li>James Suell</li>
+            <li id="list">Jonathan Moss</li>
+            <li id="list">Steve Olson</li>
+            <li id="list">James Suell</li>
           </ul>
           <br />
           Our company contact info goes here.

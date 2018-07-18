@@ -22,12 +22,15 @@ const Review = ({ history, reviews, match, toggle, id }) => {
             <button onClick={theThing => kill(theThing)}>&times;</button>
           </Col>
 
-          <h2>
+          <h2 className="abouthead">
             {myRevo.nameLocation}, {myRevo.locStreet}, {myRevo.locCity},{" "}
             {myRevo.locState} {myRevo.locZip}{" "}
           </h2>
 
-          <h3>{myRevo.reviewBody}</h3>
+          <h3 className="aboutbody">
+            "{myRevo.reviewBody}"<br />
+            <br />~{myRevo.nameUser}
+          </h3>
         </div>
       )}
     </Form>

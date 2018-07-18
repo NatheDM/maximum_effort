@@ -125,10 +125,38 @@ h2 {
   background: rgba(255, 0, 0) !important;
 }
 
+.workdamn1 {
+  text-align: center;
+  position: bottom;
+  margin: auto;
+  z-index: 0;
+  padding-top: 50px;
+  color: white;
+}
+
 .workdamn {
   text-align: center;
   position: bottom;
   margin: auto;
   z-index: 0;
   padding-top: 50px;
+  color: rgb(229, 229, 242);
+}
+
+#about {
+  color: white;
+}
+#list {
+  color: white;
+}
+.abouthead {
+  color: rgb(229, 229, 242);
+}
+
+.aboutbody {
+  color: white;
+}
+
+.rightnow {
+  float: right !important;
 }

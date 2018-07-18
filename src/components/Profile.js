@@ -23,7 +23,7 @@ const Profile = ({ history, profiles, match, toggle, id }) => {
           </Col>
           <FormGroup>
             <Col smOffset={2} sm={6}>
-              <div>
+              <div className="aboutbody">
                 UserName: {myProfo.nameUser}
                 <br />
                 Email: <a href={`mailto:${myProfo.email}`}>{myProfo.email}</a>

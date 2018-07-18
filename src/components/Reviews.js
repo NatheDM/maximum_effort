@@ -19,8 +19,8 @@ const Reviews = ({ history, reviews, mapCenter }) => {
 
   return (
     <div>
-      <h3>Local Reviews.</h3>
-
+      <h3 className="abouthead">Local Reviews.</h3>
+      {console.log(myCenter)}
       <Grid>
         {!reviews.length && <h3>no reviews found</h3>}
         {reviews.map(rvw => {

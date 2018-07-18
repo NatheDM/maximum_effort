@@ -21,12 +21,18 @@ const Profiles = ({ history, profiles }) => {
       <Jumbotron>
         <Grid>
           {!profiles.length && <h3>no profiles found</h3>}
-          <Col smOffset={1} sm={10}>
-            <Button type="submit" onClick={event => goHome(event)}>
+          <Col smOffset={4} sm={8}>
+            <h3 className="abouthead">Profile list.</h3>
+            <Button
+              type="submit"
+              onClick={event => goHome(event)}
+              className="rightnow"
+            >
               Area Map
             </Button>
-            <h3>Profile list.</h3>
           </Col>
+          <hr />
+          <hr />
           {profiles.map(prfl => (
             <Col sm={4} key={prfl._id}>
               <Panel>
